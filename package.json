@@ -1,0 +1,25 @@
+{
+  "name": "poseidon-monorepo-v2",
+  "version": "1.0.0",
+  "main": "./dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsc",
+    "watch": "npx tsc --project tsconfig.json --watch",
+    "prepare": "npm run build",
+    "build+": "npx tsc && git add -A && git commit -m \"build: update dist\" && git push"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^22.13.14",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Poseidon-Distribution-Inc/poseidon-monrepo-v2.git"
+  }
+}
