@@ -1,5 +1,5 @@
 {
-  "name": "poseidon-monorepo-v2",
+  "name": "monorepo-erund",
   "version": "1.0.0",
   "main": "./dist/index.js",
   "scripts": {
@@ -20,6 +20,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Poseidon-Distribution-Inc/poseidon-monrepo-v2.git"
+    "url": "git+https://github.com/Poseidon-Distribution-Inc/monorepo-erund.git"
   }
 }
