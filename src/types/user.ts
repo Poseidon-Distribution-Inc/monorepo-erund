@@ -1,23 +1,17 @@
 type AuthProvider = "local" | "google";
 interface IBaseUserSchema {
     id: string;
-    name?: string;
     email: string;
-    address?: string;
-    phoneNumber?: string;
-    role?: string;
+    postalCode: string;
+    phoneNumber: string;
     authProvider: AuthProvider;
+    isActive: boolean;
     createdAt: Date;
     updatedAt: Date;
-    stripeCustomerId?: string;
-    subscriptionId?: string;
-    subscriptionType?: string;
-    subscriptionStatus?: "active" | "cancelled" | "expired" | "none";
-    subscriptionEndDate?: Date;
-    lastSubscriptionUpdate?: Date;
-    isActive: boolean;
 }
 export interface ILocalUserSchema extends IBaseUserSchema {
+    firstName: string;
+    lastName: string;
     password: string;
 }
 export interface ILocalUser extends ILocalUserSchema {}
@@ -42,7 +36,7 @@ interface APIGetUserSuccessResponse {
 }
 interface APIUserLoginSuccessResponse {
     message: string;
-    data: IUser;
+    data?: IUser;
     token: string;
 }
 export interface APIGetUserRequest {
