@@ -1,24 +1,10 @@
-type Certification =
-    | string
-    | {
-          name: string;
-          number: string;
-          issuer: string;
-          issueDate: string;
-          expiryDate: string;
-      };
-
 export interface IProfileSchema {
-    userId: string;
-    name: string;
-    email: string;
-    contactNum?: string;
-    address?: string;
-    bio?: string;
-    specialties?: string[];
-    certificationsAndLicenses?: Certification[];
-    equipmentTypes?: string[];
-    isActive: boolean;
+    firstName?: string;
+    lastName?: string;
+    email?: string;
+    phoneNumber?: string;
+    password?: string;
+    postalCode?: string;
 }
 export interface IProfile extends IProfileSchema {
     id: string;
@@ -30,7 +16,7 @@ interface APIProfileErrorResponse {
 }
 interface APIProfileSuccessResponse {
     message: string;
-    data: IProfile | IProfile[];
+    data?: IProfile | IProfile[];
 }
 export type APIProfileResponse =
     | APIProfileSuccessResponse
