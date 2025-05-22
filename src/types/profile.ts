@@ -3,7 +3,6 @@ export interface IProfileSchema {
     lastName?: string;
     email?: string;
     phoneNumber?: string;
-    password?: string;
     postalCode?: string;
 }
 export interface IProfile extends IProfileSchema {
