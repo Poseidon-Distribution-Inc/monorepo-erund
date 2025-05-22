@@ -1,4 +1,4 @@
-export interface IBankAccount {
+export interface IBankAccountSchema {
     type: string;
     accountHolderName: string;
     accountNumber: string;
@@ -6,7 +6,7 @@ export interface IBankAccount {
     country: string;
     currency: string;
 }
-export interface ICard {
+export interface ICardSchema {
     type: string;
     cardNumber: string;
     expMonth: number;
@@ -15,15 +15,14 @@ export interface ICard {
     country: string;
     currency: string;
 }
-export interface IStripeBasic {
-    id: string;
+export interface IStripeBasicSchema {
     userId: string;
     stripeAccountId: string;
     firstName: string;
     lastName: string;
     email: string;
 }
-export interface IStripeFullAccountSchema extends IStripeBasic {
+export interface IStripeFullAccountSchema extends IStripeBasicSchema {
     accountType: "Personal" | "Business";
     address: string;
     city: string;
@@ -36,8 +35,8 @@ export interface IStripeFullAccountSchema extends IStripeBasic {
     businessMCC: string;
     businessTaxId: string;
     businessTaxIdType: "EIN" | "SSN";
-    card: ICard | null;
-    bankAccount: IBankAccount | null;
+    card: ICardSchema | null;
+    bankAccount: IBankAccountSchema | null;
 }
 export interface IStripeAccount extends IStripeFullAccountSchema {
     id: string;
