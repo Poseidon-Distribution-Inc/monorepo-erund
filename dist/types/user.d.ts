@@ -2,8 +2,6 @@ type AuthProvider = "local" | "google";
 interface IBaseUserSchema {
     id: string;
     email: string;
-    postalCode: string;
-    phoneNumber: string;
     authProvider: AuthProvider;
     isActive: boolean;
     createdAt: Date;
@@ -12,7 +10,10 @@ interface IBaseUserSchema {
 export interface ILocalUserSchema extends IBaseUserSchema {
     firstName: string;
     lastName: string;
+    phoneNumber: string;
     password: string;
+    postalCode: string;
+    countryCode?: string;
 }
 export interface ILocalUser extends ILocalUserSchema {
 }
