@@ -13,6 +13,7 @@ export interface ILocalUserSchema extends IBaseUserSchema {
     phoneNumber: string;
     password: string;
     postalCode: string;
+    countryCode?: string;
 }
 export interface ILocalUser extends ILocalUserSchema {}
 export interface IGoogleUserSchema extends IBaseUserSchema {
