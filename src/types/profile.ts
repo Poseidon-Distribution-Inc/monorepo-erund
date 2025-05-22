@@ -5,6 +5,7 @@ export interface IProfileSchema {
     email?: string;
     phoneNumber?: string;
     postalCode?: string;
+    isActive: boolean;
 }
 export interface IProfile extends IProfileSchema {
     id: string;
