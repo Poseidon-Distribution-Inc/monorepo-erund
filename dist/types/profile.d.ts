@@ -1,10 +1,12 @@
 export interface IProfileSchema {
+    userId: string;
     firstName?: string;
     lastName?: string;
     email?: string;
     phoneNumber?: string;
-    password?: string;
     postalCode?: string;
+    countryCode?: string;
+    isActive: boolean;
 }
 export interface IProfile extends IProfileSchema {
     id: string;
