@@ -38,8 +38,8 @@ export interface IStripeFullAccountSchema extends IStripeBasicSchema {
     businessMCC: string;
     businessTaxId: string;
     businessTaxIdType: "EIN" | "SSN";
-    card: ICardSchema | null;
-    bankAccount: IBankAccountSchema | null;
+    card: string | ICardSchema | null;
+    bankAccount: string | IBankAccountSchema | null;
 }
 export interface IStripeAccount extends IStripeFullAccountSchema {
     id: string;
