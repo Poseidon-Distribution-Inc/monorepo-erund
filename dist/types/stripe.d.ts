@@ -1,13 +1,16 @@
 export interface IBankAccountSchema {
-    type: string;
+    object: "bank_account";
     accountHolderName: string;
     accountNumber: string;
     routingNumber: string;
+    firstName: string;
+    lastName: string;
+    accountHolderType: "individual" | "company";
     country: string;
     currency: string;
 }
 export interface ICardSchema {
-    type: string;
+    object: "card";
     cardNumber: string;
     expMonth: number;
     expYear: number;
