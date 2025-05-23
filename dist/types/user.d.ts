@@ -6,6 +6,7 @@ interface IBaseUserSchema {
     isActive: boolean;
     createdAt: Date;
     updatedAt: Date;
+    isVerified: boolean;
 }
 export interface ILocalUserSchema extends IBaseUserSchema {
     firstName: string;
