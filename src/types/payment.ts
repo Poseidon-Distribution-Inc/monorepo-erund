@@ -1,11 +1,23 @@
-export type paymentStatus = "paid" | "request_refund" | "refunded";
+export type paymentStatus = "pending" | "held" | "completed" | "disputed" | "refunded" | "failed";
 
 export interface IPaymentSchema {
     payor: string;
     payee: string;
-    postId: string;
-    subscriptionId: string;
+    errandId: string;
+    amount: number;
+    payeeAmount: number;
+    platformFee: number;
+    currency: string;
     status: paymentStatus;
+    stripePaymentIntentId?: string;
+    stripeTransferId?: string;
+    heldAt?: Date;
+    completedAt?: Date;
+    disputeReason?: string;
+    disputeFiledBy?: string;
+    disputedAt?: Date;
+    disputeResolvedAt?: Date;
+    autoReleaseDate?: Date;
     isActive: boolean;
 }
 
