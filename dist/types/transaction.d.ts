@@ -1,4 +1,4 @@
-export type TransactionStatus = "pending" | "processing" | "completed" | "failed" | "disputed" | "refunded" | "cancelled";
+export type TransactionStatus = "held" | "pending" | "processing" | "completed" | "failed" | "disputed" | "refunded" | "cancelled";
 export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
 export interface ITransactionSchema {
     userId: string;
