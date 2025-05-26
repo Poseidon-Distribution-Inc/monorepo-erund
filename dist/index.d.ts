@@ -14,3 +14,4 @@ export * from "./types/file";
 export * from "./types/bidding";
 export * from "./types/websocket";
 export * from "./types/stripe";
+export * from "./types/resetPass";

@@ -30,3 +30,4 @@ __exportStar(require("./types/file"), exports);
 __exportStar(require("./types/bidding"), exports);
 __exportStar(require("./types/websocket"), exports);
 __exportStar(require("./types/stripe"), exports);
+__exportStar(require("./types/resetPass"), exports);
