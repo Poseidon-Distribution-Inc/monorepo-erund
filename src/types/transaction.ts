@@ -33,6 +33,7 @@ export interface ITransactionSchema {
     failedAt?: Date;           // When the transaction failed (if applicable)
     disputedAt?: Date;         // When the transaction was disputed
     resolvedAt?: Date;         // When a dispute was resolved
+    heldAt?: Date;             // When the transaction was held in escrow
     
     // Escrow-related fields
     escrowHoldPeriodDays?: number;   // Number of days to hold in escrow

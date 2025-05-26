@@ -22,6 +22,7 @@ export interface ITransactionSchema {
     failedAt?: Date;
     disputedAt?: Date;
     resolvedAt?: Date;
+    heldAt?: Date;
     escrowHoldPeriodDays?: number;
     autoReleaseDate?: Date;
     metadata?: Record<string, any>;
