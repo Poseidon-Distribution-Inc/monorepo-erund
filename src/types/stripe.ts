@@ -45,8 +45,8 @@ export interface IStripeFullAccountSchema extends IStripeBasicSchema {
   businessTaxId: string;
   businessTaxIdType: "EIN" | "SSN";
 
-  card: string | ICardSchema | null;
-  bankAccount: string | IBankAccountSchema | null;
+  card: ICardSchema | null;
+  bankAccount:  IBankAccountSchema | null;
 
   onboardingStatus: "Not Started" | "In Progress" | "Completed";
   onboardingLink: string | null;
