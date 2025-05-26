@@ -19,8 +19,6 @@ export interface ICardSchema {
     cvc: string;
     country: string;
     currency: string;
-    firstName: string;
-    lastName: string;
 }
 export interface IStripeBasicSchema {
     userId: string;
