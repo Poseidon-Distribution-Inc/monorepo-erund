@@ -2,6 +2,7 @@ export interface IResetPassSchema {
     token: string;
     password: string;
     isActive: boolean;
+    isVerified: boolean;
 }
 export interface IResetPass extends IResetPassSchema {
     id: string;
