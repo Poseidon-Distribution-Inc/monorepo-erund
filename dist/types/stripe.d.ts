@@ -1,4 +1,5 @@
 export interface IBankAccountSchema {
+    id: string;
     object: "bank_account";
     accountHolderName: string;
     accountNumber: string;
@@ -10,6 +11,7 @@ export interface IBankAccountSchema {
     currency: string;
 }
 export interface ICardSchema {
+    id: string;
     object: "card";
     cardNumber: string;
     expMonth: number;
