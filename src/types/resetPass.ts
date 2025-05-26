@@ -1,4 +1,5 @@
 export interface IResetPassSchema {
+  email: string;
   token: string;
   password: string;
   isActive: boolean;
