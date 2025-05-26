@@ -46,6 +46,9 @@ export interface IStripeFullAccountSchema extends IStripeBasicSchema {
 
   card: string | ICardSchema | null;
   bankAccount: string | IBankAccountSchema | null;
+
+  onboardingStatus: "Not Started" | "In Progress" | "Completed";
+  onboardingLink: string | null;
 }
 
 export interface IStripeAccount extends IStripeFullAccountSchema {
