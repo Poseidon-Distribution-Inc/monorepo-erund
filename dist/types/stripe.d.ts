@@ -26,7 +26,6 @@ export interface IStripeBasicSchema {
     email: string;
 }
 export interface IStripeFullAccountSchema extends IStripeBasicSchema {
-    accountType: "Personal" | "Business";
     address: string;
     city: string;
     state: string;
@@ -34,7 +33,7 @@ export interface IStripeFullAccountSchema extends IStripeBasicSchema {
     postalCode: string;
     phoneNumber: string;
     businessName: string;
-    businessType: "Individual" | "Company" | "Nonprofit" | "Government";
+    businessType: "individual" | "company";
     businessMCC: string;
     businessTaxId: string;
     businessTaxIdType: "EIN" | "SSN";
