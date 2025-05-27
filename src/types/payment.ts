@@ -1,4 +1,4 @@
-export type paymentStatus = "pending" | "held" | "completed" | "disputed" | "refunded" | "failed";
+export type paymentStatus = "pending" | "held" | "completed" | "disputed" | "refunded" | "failed" | "processing" | "cancelled";
 
 export interface IPaymentSchema {
     payor: string;
@@ -41,9 +41,38 @@ export type APIPaymentResponse =
     | APIPaymentErrorResponse;
 
 export interface APICreatePaymentRequest {
-    payments: IPayment;
+    payment: Omit<IPaymentSchema, 'status' | 'isActive' | 'heldAt' | 'completedAt' | 'disputedAt' | 'disputeResolvedAt' | 'autoReleaseDate'>;
 }
 
 export interface APIUpdatePaymentRequest {
-    payment: Partial<IPayment>;
+    payment: Partial<IPaymentSchema>;
+}
+
+// Escrow-specific payment API requests
+export interface APIPaymentEscrowRequest {
+    payor: string;
+    payee: string;
+    errandId: string;
+    amount: number;
+    currency?: string;
+    description: string;
+    escrowHoldPeriodDays?: number; // Default is 7 days if not specified
+    metadata?: Record<string, any>;
+}
+
+export interface APIReleasePaymentRequest {
+    paymentId: string;
+    notes?: string;
+}
+
+export interface APIDisputePaymentRequest {
+    paymentId: string;
+    reason: string;
+    disputeFiledBy: string; // User ID of who filed the dispute
+    evidence?: string;
+}
+
+export interface APICancelPaymentRequest {
+    paymentId: string;
+    reason: string;
 }

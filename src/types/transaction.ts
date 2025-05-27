@@ -68,7 +68,7 @@ export type APITransactionResponse =
 
 // API Request types
 export interface APICreateTransactionRequest {
-    transaction: Omit<ITransactionSchema, 'status' | 'isActive'>;
+    transaction: Omit<ITransactionSchema, 'status' | 'isActive' | 'transactionId'>;
 }
 
 export interface APIUpdateTransactionRequest {
@@ -84,4 +84,35 @@ export interface APIListTransactionsQuery {
     endDate?: string;
     page?: number;
     limit?: number;
+}
+
+// Escrow-specific API request types
+export interface APICaptureEscrowRequest {
+    errandId: string;
+    payeeId: string; // Service provider's user ID
+    amount: number;
+    currency?: string;
+    description: string;
+    escrowHoldPeriodDays?: number; // Optional override of default period (7 days)
+    metadata?: Record<string, any>;
+}
+
+export interface APIReleaseEscrowRequest {
+    transactionId: string;
+    errandId: string;
+    notes?: string;
+}
+
+export interface APIDisputeEscrowRequest {
+    transactionId: string;
+    errandId: string;
+    reason: string;
+    evidence?: string;
+}
+
+export interface APIResolveDisputeRequest {
+    transactionId: string;
+    resolution: 'release_to_payee' | 'refund_to_payor' | 'split';
+    splitRatio?: number; // If resolution is 'split', percentage to payee (0-100)
+    notes?: string;
 }

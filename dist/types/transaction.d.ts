@@ -44,7 +44,7 @@ interface APITransactionSuccessResponse {
 }
 export type APITransactionResponse = APITransactionSuccessResponse | APITransactionErrorResponse;
 export interface APICreateTransactionRequest {
-    transaction: Omit<ITransactionSchema, 'status' | 'isActive'>;
+    transaction: Omit<ITransactionSchema, 'status' | 'isActive' | 'transactionId'>;
 }
 export interface APIUpdateTransactionRequest {
     transaction: Partial<ITransactionSchema>;
@@ -58,5 +58,31 @@ export interface APIListTransactionsQuery {
     endDate?: string;
     page?: number;
     limit?: number;
+}
+export interface APICaptureEscrowRequest {
+    errandId: string;
+    payeeId: string;
+    amount: number;
+    currency?: string;
+    description: string;
+    escrowHoldPeriodDays?: number;
+    metadata?: Record<string, any>;
+}
+export interface APIReleaseEscrowRequest {
+    transactionId: string;
+    errandId: string;
+    notes?: string;
+}
+export interface APIDisputeEscrowRequest {
+    transactionId: string;
+    errandId: string;
+    reason: string;
+    evidence?: string;
+}
+export interface APIResolveDisputeRequest {
+    transactionId: string;
+    resolution: 'release_to_payee' | 'refund_to_payor' | 'split';
+    splitRatio?: number;
+    notes?: string;
 }
 export {};
