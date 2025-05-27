@@ -5,7 +5,6 @@ export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payou
 export interface ITransactionSchema {
     // Basic transaction details
     transactionId: string       // original transaction for payment
-    userId: string;            // User who initiated or is involved in the transaction
     amount: number;            // Transaction amount
     currency: string;          // Currency code (e.g., 'usd')
     transactionType: TransactionType; // Type of transaction
