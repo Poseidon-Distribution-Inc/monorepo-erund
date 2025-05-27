@@ -22,6 +22,7 @@ export interface ITransactionSchema {
     feePercentage?: number;    // Percentage used to calculate fee
     
     // Stripe-related fields
+    stripeSessionId?: string;  // Stripe session ID
     stripePaymentIntentId?: string;  // Stripe payment intent ID
     stripeTransferId?: string;       // Stripe transfer ID
     stripeRefundId?: string;         // Stripe refund ID

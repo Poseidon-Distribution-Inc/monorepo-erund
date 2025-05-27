@@ -13,6 +13,7 @@ export interface ITransactionSchema {
     payeeId?: string;
     platformFee?: number;
     feePercentage?: number;
+    stripeSessionId?: string;
     stripePaymentIntentId?: string;
     stripeTransferId?: string;
     stripeRefundId?: string;
