@@ -1,39 +1,37 @@
 export interface IPostSchema {
+    type: string;
+    posterId: string;
+    choreType: string;
+    otherChoreType: string;
+    description: string;
+    urgencyTag: string;
+    quantify: string;
+    quantifyValue: string;
+    rate: number;
+    note: string;
+    pickupLocation: string;
+    dropOffLocation: string;
+    pickupDate: string;
+    dateCompleted: string;
+    receiverName: string;
+    receiverContact: string;
+    volume: string;
+    area: string;
+    mass: string;
+    urgencyTime: string;
+    urgencyDate: string;
+    startTime: string;
+    endTime: string;
+    status: string;
+}
+export interface IPost extends IPostSchema {
     _id: string;
+    runnerId: string;
     orderNum: string;
     referenceNum: string;
-    posterId: string;
     createdAt: Date;
     updatedAt: Date;
     isActive: boolean;
-}
-export interface IPost extends IPostSchema {
-    size: string;
-    commodity: string;
-    weight: string;
-    truckType: string;
-    packaging: string;
-    pickupDate: string;
-    deliveredDate: string;
-    pickupLocation: string;
-    dropOffLocation: string;
-    receiverName: string;
-    receiverContact: string;
-    senderName: string;
-    companyName: string;
-    senderContact: string;
-    status: string;
-    biddings?: {
-        bidderId: string;
-        biddingAmount: string;
-        createdAt: Date;
-        postDetail: {
-            _id: string;
-        };
-        status: string;
-    };
-    shipperConfirm: boolean;
-    carrierDelivered: boolean;
 }
 interface APIPostErrorResponse {
     error: string;
