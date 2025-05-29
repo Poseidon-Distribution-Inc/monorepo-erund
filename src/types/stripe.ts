@@ -38,30 +38,32 @@ export interface IPaymentCardSchema {
 export interface IStripeBasicSchema {
   userId: string;
   stripeAccountId: string;
+  stripeCustomerId: string;
   firstName: string;
   lastName: string;
   email: string;
 }
 
 export interface IStripeFullAccountSchema extends IStripeBasicSchema {
-  address: string;
-  city: string;
-  state: string;
-  country: string;
-  postalCode: string;
-  phoneNumber: string;
+  address: string | null;
+  city: string | null;
+  state: string | null;
+  country: string | null;
+  postalCode: string | null;
+  phoneNumber: string | null;
 
-  businessName: string;
-  businessType: "individual" | "company";
-  businessMCC: string;
+  businessName: string | null;
+  businessType: "individual" | "company" | null;
+  businessMCC: string | null;
 
-  businessTaxId: string;
-  businessTaxIdType: "EIN" | "SSN";
+  businessTaxId: string | null;
+  businessTaxIdType: "EIN" | "SSN" | null;
 
-  card: ICardSchema | null;
+  payoutCard: ICardSchema | null;
+  paymentCard: IPaymentCardSchema | null;
   bankAccount:  IBankAccountSchema | null;
 
-  onboardingStatus: "Not Started" | "In Progress" | "Completed";
+  onboardingStatus: "Not Started" | "In Progress" | "Completed" | null;
   onboardingLink: string | null;
 }
 
