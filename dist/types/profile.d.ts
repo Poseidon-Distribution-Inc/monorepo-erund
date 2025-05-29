@@ -6,6 +6,7 @@ export interface IProfileSchema {
     phoneNumber?: string;
     postalCode?: string;
     countryCode?: string;
+    skills: string[];
     isActive: boolean;
 }
 export interface IProfile extends IProfileSchema {
