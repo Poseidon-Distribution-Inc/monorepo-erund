@@ -4,7 +4,16 @@ export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payou
 
 export interface ITransactionSchema {
     // Basic transaction details
-    transactionId: string       // original transaction for payment
+    
+    
+    postId: string;
+    biddingIds: [string];  //bidding ids
+    winningBidId: string; //mongo id
+
+
+
+
+    transactionId: string          // original transaction for payment
     amount: number;            // Transaction amount
     currency: string;          // Currency code (e.g., 'usd')
     transactionType: TransactionType; // Type of transaction
