@@ -1,4 +1,5 @@
 export interface IPostSchema {
+    transactionId?: string;
     posterId: string;
     choreType: string;
     otherChoreType: string;

@@ -3,6 +3,7 @@ export interface IBiddingSchema {
     postDetail: {
         _id: string;
     };
+    transactionId?: string;
     bidderId: string;
     bidderName: string;
     biddingAmount: string;
