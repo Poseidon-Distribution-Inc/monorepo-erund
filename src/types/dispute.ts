@@ -1,6 +1,7 @@
 // Dispute schema
 export interface IDisputeSchema {  
-    postId:string;              // Unique identifier
+    postId:string;   
+    authorId:string;           // Unique identifier
     content: string;           // Dispute content/description
     resolution?: string;        // Resolution of the dispute
     adminComment?: string;     // Administrator's comment on the dispute
