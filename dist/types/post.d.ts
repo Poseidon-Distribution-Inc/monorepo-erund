@@ -3,7 +3,6 @@ export interface IPostSchema {
     transactionId?: string;
     postType: PostType;
     posterId: string;
-    postType: "bidded" | "fixed";
     choreType: string;
     otherChoreType: string;
     description: string;
@@ -30,7 +29,7 @@ export interface IPostSchema {
     startDateTime: string;
     endDateTime: string;
     status: string;
-    photo?: [string];
+    photo?: string[];
 }
 export interface IPost extends IPostSchema {
     id: string;
