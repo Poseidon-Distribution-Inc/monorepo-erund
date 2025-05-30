@@ -9,6 +9,7 @@ export interface IBankAccountSchema {
   accountHolderType: "individual" | "company";
   country: string;
   currency: string;
+  isDefault: boolean;
 }
 
 //card for payout
@@ -20,6 +21,7 @@ export interface ICardSchema {
   expYear: number;
   country: string;
   currency: string;
+  isDefault: boolean;
 }
 
 //card for payment
@@ -33,6 +35,7 @@ export interface IPaymentCardSchema {
   cvc: string;
   country: string;
   currency: string;
+  isDefault: boolean;
 }
 
 export interface IStripeBasicSchema {
