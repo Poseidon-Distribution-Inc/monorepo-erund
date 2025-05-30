@@ -16,3 +16,5 @@ export * from "./types/websocket";
 export * from "./types/stripe";
 export * from "./types/resetPass";
 export * from "./types/transaction";
+export * from "./types/history";
+export * from "./types/dispute";
