@@ -45,26 +45,26 @@ export interface IStripeBasicSchema {
 }
 
 export interface IStripeFullAccountSchema extends IStripeBasicSchema {
-  address: string | null;
-  city: string | null;
-  state: string | null;
-  country: string | null;
-  postalCode: string | null;
-  phoneNumber: string | null;
+  address?: string;
+  city?: string;
+  state?: string;
+  country?: string;
+  postalCode?: string;
+  phoneNumber?: string;
 
-  businessName: string | null;
-  businessType: "individual" | "company" | null;
-  businessMCC: string | null;
+  businessName?: string;
+  businessType?: "individual" | "company";
+  businessMCC?: string;
 
-  businessTaxId: string | null;
-  businessTaxIdType: "EIN" | "SSN" | null;
+  businessTaxId?: string;
+  businessTaxIdType?: "EIN" | "SSN";
 
-  payoutCards: ICardSchema[] | null;
-  paymentCards: IPaymentCardSchema[] | null;
-  bankAccounts:  IBankAccountSchema[] | null;
+  payoutCards?: ICardSchema[];
+  paymentCards?: IPaymentCardSchema[];
+  bankAccounts?:  IBankAccountSchema[];
 
-  onboardingStatus: "Not Started" | "In Progress" | "Completed" | null;
-  onboardingLink: string | null;
+  onboardingStatus?: "Not Started" | "In Progress" | "Completed";
+  onboardingLink?: string;
 }
 
 export interface IStripeAccount extends IStripeFullAccountSchema {

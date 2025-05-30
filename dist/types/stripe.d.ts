@@ -39,22 +39,22 @@ export interface IStripeBasicSchema {
     email: string;
 }
 export interface IStripeFullAccountSchema extends IStripeBasicSchema {
-    address: string | null;
-    city: string | null;
-    state: string | null;
-    country: string | null;
-    postalCode: string | null;
-    phoneNumber: string | null;
-    businessName: string | null;
-    businessType: "individual" | "company" | null;
-    businessMCC: string | null;
-    businessTaxId: string | null;
-    businessTaxIdType: "EIN" | "SSN" | null;
-    payoutCards: ICardSchema[] | null;
-    paymentCards: IPaymentCardSchema[] | null;
-    bankAccounts: IBankAccountSchema[] | null;
-    onboardingStatus: "Not Started" | "In Progress" | "Completed" | null;
-    onboardingLink: string | null;
+    address?: string;
+    city?: string;
+    state?: string;
+    country?: string;
+    postalCode?: string;
+    phoneNumber?: string;
+    businessName?: string;
+    businessType?: "individual" | "company";
+    businessMCC?: string;
+    businessTaxId?: string;
+    businessTaxIdType?: "EIN" | "SSN";
+    payoutCards?: ICardSchema[];
+    paymentCards?: IPaymentCardSchema[];
+    bankAccounts?: IBankAccountSchema[];
+    onboardingStatus?: "Not Started" | "In Progress" | "Completed";
+    onboardingLink?: string;
 }
 export interface IStripeAccount extends IStripeFullAccountSchema {
     id: string;
