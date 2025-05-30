@@ -32,3 +32,5 @@ __exportStar(require("./types/websocket"), exports);
 __exportStar(require("./types/stripe"), exports);
 __exportStar(require("./types/resetPass"), exports);
 __exportStar(require("./types/transaction"), exports);
+__exportStar(require("./types/history"), exports);
+__exportStar(require("./types/dispute"), exports);
