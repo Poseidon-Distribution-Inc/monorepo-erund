@@ -1,9 +1,9 @@
 export type TransactionStatus = "held" | "pending" | "processing" | "completed" | "failed" | "disputed" | "refunded" | "cancelled";
 export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
-export type PaymentType = "bidded" | "fixed";
+type PostType = "bidded" | "fixed";
 export interface ITransactionSchema {
     postId: string;
-    postType: PaymentType;
+    postType: PostType;
     bidId: string;
     posterId: string;
     bidderId?: string;

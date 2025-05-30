@@ -1,5 +1,7 @@
+type PostType = "bidded" | "fixed";
 export interface IPostSchema {
     transactionId?:string;
+    postType: PostType;
     posterId: string;
     postType: "bidded" | "fixed";
     choreType: string;
