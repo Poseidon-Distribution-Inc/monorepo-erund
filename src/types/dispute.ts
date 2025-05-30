@@ -4,7 +4,7 @@ export interface IDisputeSchema {                // Unique identifier
     resolution?: string;        // Resolution of the dispute
     adminComment?: string;     // Administrator's comment on the dispute
     resolveDate: Date;        // Date when the dispute was resolved
-    isActive:string;         // When the record was last updated
+    isActive:boolean;         // When the record was last updated
 }
 
 export interface IDispute extends IDisputeSchema {

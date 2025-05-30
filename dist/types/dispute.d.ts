@@ -3,7 +3,7 @@ export interface IDisputeSchema {
     resolution?: string;
     adminComment?: string;
     resolveDate: Date;
-    isActive: string;
+    isActive: boolean;
 }
 export interface IDispute extends IDisputeSchema {
     id: string;
