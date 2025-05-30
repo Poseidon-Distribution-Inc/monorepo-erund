@@ -6,7 +6,6 @@ export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payou
 export type PaymentType = "bidded" | "fixed";
 
 export interface ITransactionSchema {
-    transId: string;           // Transaction ID
     postId: string;            // Related post ID
     postType: PaymentType;     // Type of post
     bidId: string;             // Related bid ID

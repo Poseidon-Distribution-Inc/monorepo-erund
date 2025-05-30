@@ -2,26 +2,12 @@ export type TransactionStatus = "held" | "pending" | "processing" | "completed" 
 export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
 export type PaymentType = "bidded" | "fixed";
 export interface ITransactionSchema {
-<<<<<<< HEAD
-    transId: string;
     postId: string;
     postType: PaymentType;
     bidId: string;
     posterId: string;
     bidderId?: string;
     runnerId?: string;
-=======
-    postId: string;
-    biddingIds: [string];
-    winningBidId: string;
-    transactionId: string;
-    amount: number;
-    currency: string;
-    transactionType: TransactionType;
-    status: TransactionStatus;
-    description: string;
-    errandId?: string;
->>>>>>> 9b2e9e3a3a305d30a85c53ae075f4a46c68d5c10
     paymentId?: string;
     ratingId?: string;
     chatRoomId?: string;
