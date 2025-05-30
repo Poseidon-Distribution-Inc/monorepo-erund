@@ -4,7 +4,10 @@ export interface IPaymentSchema {
     payorUserId: string;
     payeeUserId: string;
     currency: string;
-    amount: number;
+    initialAmount: number;
+    finalAmount: number;
+    fullAmount: number;
+    platformAmount: number;
     payeeAmount: number;
     platformFee: number;
     stripePaymentIntentId?: string;

@@ -7,7 +7,10 @@ export interface IPaymentSchema {
     payeeUserId: string;
 
     currency: string;
-    amount: number;
+    initialAmount: number; //amount for bid
+    finalAmount: number;  //amount for bid
+    fullAmount: number;  //amount for fixed
+    platformAmount: number;
     payeeAmount: number;
     platformFee: number;
     
