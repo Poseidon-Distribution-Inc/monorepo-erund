@@ -1,34 +1,20 @@
 export type TransactionStatus = "held" | "pending" | "processing" | "completed" | "failed" | "disputed" | "refunded" | "cancelled";
 export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
+export type PaymentType = "bidded" | "fixed";
 export interface ITransactionSchema {
-    transactionId: string;
-    amount: number;
-    currency: string;
-    transactionType: TransactionType;
-    status: TransactionStatus;
-    description: string;
-    errandId?: string;
+    transId: string;
+    postId: string;
+    postType: PaymentType;
+    bidId: string;
+    posterId: string;
+    bidderId?: string;
+    runnerId?: string;
     paymentId?: string;
-    payorId?: string;
-    payeeId?: string;
-    platformFee?: number;
-    feePercentage?: number;
-    stripeSessionId?: string;
-    stripePaymentIntentId?: string;
-    stripeTransferId?: string;
-    stripeRefundId?: string;
-    stripeChargeId?: string;
-    processedAt?: Date;
-    completedAt?: Date;
-    failedAt?: Date;
-    disputedAt?: Date;
-    resolvedAt?: Date;
-    heldAt?: Date;
-    escrowHoldPeriodDays?: number;
-    autoReleaseDate?: Date;
-    metadata?: Record<string, any>;
-    notes?: string;
-    isActive: boolean;
+    ratingId?: string;
+    chatRoomId?: string;
+    historyId?: string;
+    disputeId?: string;
+    deletedAt: Date;
 }
 export interface ITransaction extends ITransactionSchema {
     id: string;
@@ -41,11 +27,11 @@ interface APITransactionErrorResponse {
 }
 interface APITransactionSuccessResponse {
     message: string;
-    data: ITransaction | ITransaction[];
+    data?: ITransaction | ITransaction[];
 }
 export type APITransactionResponse = APITransactionSuccessResponse | APITransactionErrorResponse;
 export interface APICreateTransactionRequest {
-    transaction: Omit<ITransactionSchema, 'status' | 'isActive' | 'transactionId'>;
+    transaction: Omit<ITransactionSchema, 'status' | 'isActive' | 'transId'>;
 }
 export interface APIUpdateTransactionRequest {
     transaction: Partial<ITransactionSchema>;

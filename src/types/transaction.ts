@@ -1,49 +1,24 @@
-export type TransactionStatus = "held" | "pending" | "processing" | "completed" | "failed" | "disputed" | "refunded" | "cancelled";
+import { IDisputeSchema, IDispute } from './dispute';
+import { IHistorySchema, IHistory } from './history';
 
+export type TransactionStatus = "held" | "pending" | "processing" | "completed" | "failed" | "disputed" | "refunded" | "cancelled";
 export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
+export type PaymentType = "bidded" | "fixed";
 
 export interface ITransactionSchema {
-    // Basic transaction details
-    transactionId: string       // original transaction for payment
-    amount: number;            // Transaction amount
-    currency: string;          // Currency code (e.g., 'usd')
-    transactionType: TransactionType; // Type of transaction
-    status: TransactionStatus; // Current status of the transaction
-    description: string;       // Human-readable description
-    
-    // Related entities
-    errandId?: string;         // Related errand if applicable
-    paymentId?: string;        // Related payment if this transaction is part of a payment flow
-    payorId?: string;          // User making the payment (if applicable)
-    payeeId?: string;          // User receiving the payment (if applicable)
-    
-    // Fee information
-    platformFee?: number;      // Platform fee amount if applicable
-    feePercentage?: number;    // Percentage used to calculate fee
-    
-    // Stripe-related fields
-    stripeSessionId?: string;  // Stripe session ID
-    stripePaymentIntentId?: string;  // Stripe payment intent ID
-    stripeTransferId?: string;       // Stripe transfer ID
-    stripeRefundId?: string;         // Stripe refund ID
-    stripeChargeId?: string;         // Stripe charge ID
-    
-    // Timestamps for different stages
-    processedAt?: Date;        // When the transaction was processed
-    completedAt?: Date;        // When the transaction was completed
-    failedAt?: Date;           // When the transaction failed (if applicable)
-    disputedAt?: Date;         // When the transaction was disputed
-    resolvedAt?: Date;         // When a dispute was resolved
-    heldAt?: Date;             // When the transaction was held in escrow
-    
-    // Escrow-related fields
-    escrowHoldPeriodDays?: number;   // Number of days to hold in escrow
-    autoReleaseDate?: Date;          // Date when funds will auto-release from escrow
-    
-    // Additional info
-    metadata?: Record<string, any>;  // Additional metadata
-    notes?: string;                  // Internal notes
-    isActive: boolean;               // Whether the transaction is active
+    transId: string;           // Transaction ID
+    postId: string;            // Related post ID
+    postType: PaymentType;     // Type of post
+    bidId: string;             // Related bid ID
+    posterId: string;          // ID of the poster
+    bidderId?: string;         // ID of the bidder
+    runnerId?: string;         // Alternative name for runner ID
+    paymentId?: string;        // Related payment ID
+    ratingId?: string;         // Related rating ID
+    chatRoomId?: string;       // Related chat room ID
+    historyId?: string;        // Related history ID
+    disputeId?: string;        // Related dispute ID
+    deletedAt: Date;   
 }
 
 export interface ITransaction extends ITransactionSchema {
@@ -60,7 +35,7 @@ interface APITransactionErrorResponse {
 
 interface APITransactionSuccessResponse {
     message: string;
-    data: ITransaction | ITransaction[];
+    data?: ITransaction | ITransaction[];
 }
 
 export type APITransactionResponse =
@@ -69,7 +44,7 @@ export type APITransactionResponse =
 
 // API Request types
 export interface APICreateTransactionRequest {
-    transaction: Omit<ITransactionSchema, 'status' | 'isActive' | 'transactionId'>;
+    transaction: Omit<ITransactionSchema, 'status' | 'isActive' | 'transId'>;
 }
 
 export interface APIUpdateTransactionRequest {
