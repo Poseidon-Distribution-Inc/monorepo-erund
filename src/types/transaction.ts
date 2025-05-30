@@ -16,8 +16,7 @@ export interface ITransactionSchema {
     ratingId?: string;         // Related rating ID
     chatRoomId?: string;       // Related chat room ID
     historyId?: string;        // Related history ID
-    disputeId?: string;        // Related dispute ID
-    deletedAt: Date;   
+    disputeId?: string;        // Related dispute ID 
 }
 
 export interface ITransaction extends ITransactionSchema {

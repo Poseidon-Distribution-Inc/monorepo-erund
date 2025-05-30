@@ -1,12 +1,10 @@
 // Dispute schema
-export interface IDisputeSchema {
-    id: string;                // Unique identifier
+export interface IDisputeSchema {                // Unique identifier
     content: string;           // Dispute content/description
-    resolution: string;        // Resolution of the dispute
+    resolution?: string;        // Resolution of the dispute
     adminComment?: string;     // Administrator's comment on the dispute
     resolveDate: Date;        // Date when the dispute was resolved
-    createdAt: Date;          // When the record was created
-    updatedAt: Date;          // When the record was last updated
+    isActive:string;         // When the record was last updated
 }
 
 export interface IDispute extends IDisputeSchema {
