@@ -3,11 +3,11 @@ import { IHistorySchema, IHistory } from './history';
 
 export type TransactionStatus = "held" | "pending" | "processing" | "completed" | "failed" | "disputed" | "refunded" | "cancelled";
 export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
-export type PaymentType = "bidded" | "fixed";
+type PostType = "bidded" | "fixed";
 
 export interface ITransactionSchema {
     postId: string;            // Related post ID
-    postType: PaymentType;     // Type of post
+    postType: PostType;     // Type of post
     bidId: string;             // Related bid ID
     posterId: string;          // ID of the poster
     bidderId?: string;         // ID of the bidder
