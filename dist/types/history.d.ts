@@ -7,6 +7,7 @@ export interface IHistorySchema {
     errandStarted?: Date;
     errandFinished?: Date;
     errandFinishedConfirm?: Date;
+    isActive: boolean;
 }
 export interface IHistory extends IHistorySchema {
     id: string;

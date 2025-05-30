@@ -1,11 +1,9 @@
 export interface IDisputeSchema {
-    id: string;
     content: string;
-    resolution: string;
+    resolution?: string;
     adminComment?: string;
     resolveDate: Date;
-    createdAt: Date;
-    updatedAt: Date;
+    isActive: string;
 }
 export interface IDispute extends IDisputeSchema {
     id: string;

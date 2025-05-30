@@ -13,7 +13,6 @@ export interface ITransactionSchema {
     chatRoomId?: string;
     historyId?: string;
     disputeId?: string;
-    deletedAt: Date;
 }
 export interface ITransaction extends ITransactionSchema {
     id: string;
