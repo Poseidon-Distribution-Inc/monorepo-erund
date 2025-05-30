@@ -1,22 +1,20 @@
 export type paymentStatus = "pending" | "held" | "completed" | "disputed" | "refunded" | "failed" | "processing" | "cancelled";
 export interface IPaymentSchema {
-    payor: string;
-    payee: string;
-    errandId: string;
-    amount: number;
+    transactionId: string;
+    payorUserId: string;
+    payeeUserId: string;
+    currency: string;
+    initialAmount: number;
+    finalAmount: number;
+    fullAmount: number;
+    platformAmount: number;
     payeeAmount: number;
     platformFee: number;
-    currency: string;
-    status: paymentStatus;
     stripePaymentIntentId?: string;
+    autoReleaseDate: Date;
     stripeTransferId?: string;
-    heldAt?: Date;
-    completedAt?: Date;
-    disputeReason?: string;
-    disputeFiledBy?: string;
-    disputedAt?: Date;
-    disputeResolvedAt?: Date;
-    autoReleaseDate?: Date;
+    releaseDate?: Date;
+    status: paymentStatus;
     isActive: boolean;
 }
 export interface IPayment extends IPaymentSchema {

@@ -9,8 +9,9 @@ export interface IBankAccountSchema {
     accountHolderType: "individual" | "company";
     country: string;
     currency: string;
+    isDefault: boolean;
 }
-export interface ICardSchema {
+export interface IPayoutCardSchema {
     id: string;
     object: "card";
     cardNumber: string;
@@ -18,6 +19,7 @@ export interface ICardSchema {
     expYear: number;
     country: string;
     currency: string;
+    isDefault: boolean;
 }
 export interface IPaymentCardSchema {
     id: string;
@@ -29,11 +31,12 @@ export interface IPaymentCardSchema {
     cvc: string;
     country: string;
     currency: string;
+    isDefault: boolean;
 }
 export interface IStripeBasicSchema {
     userId: string;
-    stripeAccountId: string;
-    stripeCustomerId: string;
+    stripePayoutAccountId: string;
+    stripePaymentCustomerId: string;
     firstName: string;
     lastName: string;
     email: string;
@@ -50,9 +53,9 @@ export interface IStripeFullAccountSchema extends IStripeBasicSchema {
     businessMCC?: string;
     businessTaxId?: string;
     businessTaxIdType?: "EIN" | "SSN";
-    payoutCards?: ICardSchema[];
+    payoutCards?: IPayoutCardSchema[];
     paymentCards?: IPaymentCardSchema[];
-    bankAccounts?: IBankAccountSchema[];
+    payoutBankAccounts?: IBankAccountSchema[];
     onboardingStatus?: "Not Started" | "In Progress" | "Completed";
     onboardingLink?: string;
 }
