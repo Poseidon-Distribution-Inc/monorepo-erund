@@ -1,13 +1,12 @@
 export interface IHistorySchema {
-    id: string;
-    initalPay?: boolean;
-    fullPay?: boolean;
-    errandBidAccepted?: boolean;
+    initialPay?: Date;
+    fullPay?: Date;
+    errandBidAccepted?: Date;
     createdPostDate?: Date;
-    errandAccepted?: boolean;
-    errandStarted?: boolean;
-    errandFinished?: boolean;
-    errandFinishedConfirm?: boolean;
+    errandAccepted?: Date;
+    errandStarted?: Date;
+    errandFinished?: Date;
+    errandFinishedConfirm?: Date;
 }
 export interface IHistory extends IHistorySchema {
     id: string;
