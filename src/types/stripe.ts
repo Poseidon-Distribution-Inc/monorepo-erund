@@ -40,7 +40,7 @@ export interface IPaymentCardSchema {
 
 export interface IStripeBasicSchema {
   userId: string;
-  stripePayoutAccountId: string;
+  stripePayoutAccountId?: string;
   stripePaymentCustomerId: string;
   firstName: string;
   lastName: string;
