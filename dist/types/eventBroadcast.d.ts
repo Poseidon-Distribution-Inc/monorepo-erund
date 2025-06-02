@@ -4,7 +4,7 @@ export interface IEventBroadcastSchema {
     targetId?: string;
     documentId: string;
 }
-export interface IEventBroadcast {
+export interface IEventBroadcast extends IEventBroadcastSchema {
     id: string;
     createdAt: Date;
     updatedAt: Date;
