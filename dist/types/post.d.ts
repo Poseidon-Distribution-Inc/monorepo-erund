@@ -29,6 +29,7 @@ export interface IPostSchema {
     startDateTime: string;
     endDateTime: string;
     status: string;
+    photos?: string[];
 }
 export interface IPost extends IPostSchema {
     id: string;
