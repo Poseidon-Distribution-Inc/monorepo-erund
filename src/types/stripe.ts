@@ -68,6 +68,9 @@ export interface IStripeFullAccountSchema extends IStripeBasicSchema {
 
   onboardingStatus?: "Not Started" | "In Progress" | "Completed";
   onboardingLink?: string;
+
+  hasPendingRequirements?: boolean;
+  pendingRequirements?: string[];
 }
 
 export interface IStripeAccount extends IStripeFullAccountSchema {

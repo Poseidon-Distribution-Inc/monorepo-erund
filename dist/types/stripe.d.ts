@@ -58,6 +58,8 @@ export interface IStripeFullAccountSchema extends IStripeBasicSchema {
     payoutBankAccounts?: IBankAccountSchema[];
     onboardingStatus?: "Not Started" | "In Progress" | "Completed";
     onboardingLink?: string;
+    hasPendingRequirements?: boolean;
+    pendingRequirements?: string[];
 }
 export interface IStripeAccount extends IStripeFullAccountSchema {
     id: string;
