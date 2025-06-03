@@ -18,3 +18,4 @@ export * from "./types/resetPass";
 export * from "./types/transaction";
 export * from "./types/history";
 export * from "./types/dispute";
+export * from "./types/eventBroadcast";
