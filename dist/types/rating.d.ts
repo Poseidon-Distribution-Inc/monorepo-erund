@@ -1,8 +1,10 @@
 export interface IRatingSchema {
     userId: string;
-    postId: string;
-    ratingScore: number;
-    commentId: string;
+    transactionId: string;
+    targetId: string;
+    targetType: string;
+    score: number;
+    comment?: string;
     isActive: boolean;
 }
 export interface IRating extends IRatingSchema {
