@@ -34,3 +34,4 @@ __exportStar(require("./types/resetPass"), exports);
 __exportStar(require("./types/transaction"), exports);
 __exportStar(require("./types/history"), exports);
 __exportStar(require("./types/dispute"), exports);
+__exportStar(require("./types/eventBroadcast"), exports);
