@@ -3,6 +3,7 @@ export interface IPostSchema {
     transactionId?: string;
     postType: PostType;
     posterId: string;
+    posterName: string;
     choreType: string;
     otherChoreType: string;
     description: string;
