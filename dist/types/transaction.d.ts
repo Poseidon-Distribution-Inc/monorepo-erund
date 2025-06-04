@@ -1,18 +1,38 @@
-export type TransactionStatus = "held" | "pending" | "processing" | "completed" | "failed" | "disputed" | "refunded" | "cancelled";
+export type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "payment_completed" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
 export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
-type PostType = "bidded" | "fixed";
+type PostType = "bid" | "take";
 export interface ITransactionSchema {
     postId: string;
     postType: PostType;
-    bidId: string;
+    bidIds?: string[];
     posterId: string;
-    bidderId?: string;
+    bidderIds?: string[];
     runnerId?: string;
     paymentId?: string;
-    ratingId?: string;
+    ratingIds?: string[];
     chatRoomId?: string;
     historyId?: string;
     disputeId?: string;
+    status: TransactionStatus;
+    platformFeePercentage?: number;
+    platformFeeAmount?: number;
+    payeeAmount: number;
+    amount?: number;
+    matchedAt?: Date;
+    processingAt?: Date;
+    currency?: string;
+    serviceCompletedAt?: Date;
+    transactionCompletedAt?: Date;
+    failedAt?: Date;
+    disputedAt?: Date;
+    refundedAt?: Date;
+    cancelledAt?: Date;
+    releaseType?: 'manual' | 'auto';
+    releaseAt?: Date;
+    stripePaymentIntentId?: string;
+    stripeTransferId?: string;
+    isActive?: boolean;
+    note?: string;
 }
 export interface ITransaction extends ITransactionSchema {
     id: string;

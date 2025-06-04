@@ -9,6 +9,7 @@ export interface IProfileSchema {
     skills?: string[];
     bio?: string;
     isActive: boolean;
+    role: 'user' | 'admin' | 'runner'
 }
 export interface IProfile extends IProfileSchema {
     id: string;

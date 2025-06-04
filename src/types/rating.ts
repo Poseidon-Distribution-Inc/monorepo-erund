@@ -1,34 +1,43 @@
 export interface IRatingSchema {
-  userId: string;
-  postId: string;
-  ratingScore: number;
-  commentId: string;
-  isActive: boolean;
+    userId: string;
+    transactionId: string;
+    targetId: string;
+    targetType: string;
+    score: number;
+    comment?: string;
+    isActive: boolean;
 }
 
 export interface IRating extends IRatingSchema {
-  id: string;
-  createdAt: Date;
-  updatedAt: Date;
+    id: string;
+    createdAt: Date;
+    updatedAt: Date;
 }
-
+// Response shapes
+interface IRatingResponse {
+    averageRating?: number;
+    totalRatings?: number;
+    ratings: IRating[]; 
+}
+interface ISingleRatingResponse {
+    rating: IRating;
+}
 interface APIRatingErrorResponse {
-  error: string;
+    error: string;
 }
-
-interface APIRatingSuccessResponse {
-  message: string;
-  data: IRating | IRating[];
+export interface APIRatingSuccessResponse<T = IRatingResponse | ISingleRatingResponse> {
+    message: string;
+    data: T;
 }
-
 export type APIRatingResponse =
-  | APIRatingSuccessResponse
-  | APIRatingErrorResponse;
+    | APIRatingSuccessResponse<IRatingResponse>
+    | APIRatingSuccessResponse<ISingleRatingResponse>
+    | APIRatingErrorResponse;
 
+// Request shapes
 export interface APICreateRatingRequest {
-  ratings: IRating;
+    ratings: IRating;
 }
-
 export interface APIUpdateRatingRequest {
-  rating: Partial<IRating>;
+    rating: Partial<IRating>;
 }
