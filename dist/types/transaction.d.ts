@@ -16,7 +16,7 @@ export interface ITransactionSchema {
     status: TransactionStatus;
     platformFeePercentage?: number;
     platformFeeAmount?: number;
-    payeeAmount?: number;
+    payeeAmount: number;
     amount?: number;
     matchedAt?: Date;
     processingAt?: Date;
