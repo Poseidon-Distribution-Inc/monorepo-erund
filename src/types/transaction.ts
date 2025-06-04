@@ -8,12 +8,12 @@ type PostType = "bid" | "take";
 export interface ITransactionSchema {
     postId: string;            // Related post ID
     postType: PostType;     // Type of post
-    bidId: string;             // Related bid ID
+    bidIds?: string[];             // Related bid ID
     posterId: string;          // ID of the poster, aka user/payer
-    bidderId?: string;         // ID of the bidder
+    bidderIds?: string[];         // ID of the bidder
     runnerId?: string;         // Alternative name for runner ID, aka service provider/payee
     paymentId?: string;        // Related payment ID
-    ratingId?: string;         // Related rating ID
+    ratingIds?: string[];         // Related rating ID
     chatRoomId?: string;       // Related chat room ID
     historyId?: string;        // Related history ID
     disputeId?: string;        // Related dispute ID

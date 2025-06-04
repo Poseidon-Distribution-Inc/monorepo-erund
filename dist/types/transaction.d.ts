@@ -4,12 +4,12 @@ type PostType = "bid" | "take";
 export interface ITransactionSchema {
     postId: string;
     postType: PostType;
-    bidId: string;
+    bidIds?: string[];
     posterId: string;
-    bidderId?: string;
+    bidderIds?: string[];
     runnerId?: string;
     paymentId?: string;
-    ratingId?: string;
+    ratingIds?: string[];
     chatRoomId?: string;
     historyId?: string;
     disputeId?: string;
