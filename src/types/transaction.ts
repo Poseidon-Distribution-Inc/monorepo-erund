@@ -32,6 +32,11 @@ export interface ITransactionSchema {
 
     releaseType?: 'manual' | 'auto';   //manual by user or auto by system (after 7 days)
     releaseAt?: Date;             // Time when the transaction will be released
+
+
+    // Stripe payment details
+    stripePaymentIntentId?: string;
+    stripeTransferId?: string;
     
 }
 

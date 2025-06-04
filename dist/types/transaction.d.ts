@@ -25,6 +25,8 @@ export interface ITransactionSchema {
     cancelledAt?: Date;
     releaseType?: 'manual' | 'auto';
     releaseAt?: Date;
+    stripePaymentIntentId?: string;
+    stripeTransferId?: string;
 }
 export interface ITransaction extends ITransactionSchema {
     id: string;
