@@ -15,7 +15,7 @@ export interface ITransactionSchema {
     disputeId?: string;
     status: TransactionStatus;
     platformFee?: number;
-    Amount?: number;
+    amount?: number;
     matchedAt?: Date;
     processingAt?: Date;
     serviceCompletedAt?: Date;

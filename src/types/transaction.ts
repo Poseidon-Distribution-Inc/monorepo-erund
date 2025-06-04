@@ -19,8 +19,8 @@ export interface ITransactionSchema {
     disputeId?: string;        // Related dispute ID
     status: TransactionStatus;
 
-    platformFee?: number;      // Platform fee
-    Amount?: number; // Platform fee amount
+    platformFee?: number;      // Platform fee in percentage
+    amount?: number; // Platform fee amount
     matchedAt?: Date;         // Time when the transaction was matched
     processingAt?: Date;      // Time when the transaction was processing
     serviceCompletedAt?: Date; // Time when the service was completed
