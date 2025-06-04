@@ -1,6 +1,6 @@
-export type TransactionStatus = "held" | "pending" | "processing" | "completed" | "failed" | "disputed" | "refunded" | "cancelled";
+export type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
 export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
-type PostType = "bidded" | "fixed";
+type PostType = "bid" | "take";
 export interface ITransactionSchema {
     postId: string;
     postType: PostType;
@@ -13,6 +13,18 @@ export interface ITransactionSchema {
     chatRoomId?: string;
     historyId?: string;
     disputeId?: string;
+    status?: TransactionStatus;
+    platformFee?: number;
+    matchedAt?: Date;
+    processingAt?: Date;
+    serviceCompletedAt?: Date;
+    transactionCompletedAt?: Date;
+    failedAt?: Date;
+    disputedAt?: Date;
+    refundedAt?: Date;
+    cancelledAt?: Date;
+    releaseType?: 'manual' | 'auto';
+    releaseAt?: Date;
 }
 export interface ITransaction extends ITransactionSchema {
     id: string;

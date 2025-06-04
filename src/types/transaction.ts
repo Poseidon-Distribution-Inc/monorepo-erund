@@ -1,22 +1,38 @@
 import { IDisputeSchema, IDispute } from './dispute';
 import { IHistorySchema, IHistory } from './history';
 
-export type TransactionStatus = "held" | "pending" | "processing" | "completed" | "failed" | "disputed" | "refunded" | "cancelled";
+export type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
 export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
-type PostType = "bidded" | "fixed";
+type PostType = "bid" | "take";
 
 export interface ITransactionSchema {
     postId: string;            // Related post ID
     postType: PostType;     // Type of post
     bidId: string;             // Related bid ID
-    posterId: string;          // ID of the poster
+    posterId: string;          // ID of the poster, aka user/payer
     bidderId?: string;         // ID of the bidder
-    runnerId?: string;         // Alternative name for runner ID
+    runnerId?: string;         // Alternative name for runner ID, aka service provider/payee
     paymentId?: string;        // Related payment ID
     ratingId?: string;         // Related rating ID
     chatRoomId?: string;       // Related chat room ID
     historyId?: string;        // Related history ID
-    disputeId?: string;        // Related dispute ID 
+    disputeId?: string;        // Related dispute ID
+    status?: TransactionStatus;
+
+    platformFee?: number;      // Platform fee
+    matchedAt?: Date;         // Time when the transaction was matched
+    processingAt?: Date;      // Time when the transaction was processing
+    serviceCompletedAt?: Date; // Time when the service was completed
+    transactionCompletedAt?: Date; // Time when the transaction was completed
+    failedAt?: Date;          // Time when the transaction failed
+    disputedAt?: Date;        // Time when the transaction was disputed
+    refundedAt?: Date;        // Time when the transaction was refunded
+    cancelledAt?: Date;       // Time when the transaction was cancelled
+
+
+    releaseType?: 'manual' | 'auto';   //manual by user or auto by system (after 7 days)
+    releaseAt?: Date;             // Time when the transaction will be released
+    
 }
 
 export interface ITransaction extends ITransactionSchema {
