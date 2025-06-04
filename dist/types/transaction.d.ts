@@ -13,7 +13,7 @@ export interface ITransactionSchema {
     chatRoomId?: string;
     historyId?: string;
     disputeId?: string;
-    status?: TransactionStatus;
+    status: TransactionStatus;
     platformFee?: number;
     matchedAt?: Date;
     processingAt?: Date;

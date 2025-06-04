@@ -17,7 +17,7 @@ export interface ITransactionSchema {
     chatRoomId?: string;       // Related chat room ID
     historyId?: string;        // Related history ID
     disputeId?: string;        // Related dispute ID
-    status?: TransactionStatus;
+    status: TransactionStatus;
 
     platformFee?: number;      // Platform fee
     matchedAt?: Date;         // Time when the transaction was matched
