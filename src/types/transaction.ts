@@ -19,10 +19,13 @@ export interface ITransactionSchema {
     disputeId?: string;        // Related dispute ID
     status: TransactionStatus;
 
-    platformFee?: number;      // Platform fee in percentage
+    platformFeePercentage?: number;
+    platformFeeAmount?: number; 
+    payeeAmount?: number;     // Platform fee in percentage
     amount?: number; // Platform fee amount
     matchedAt?: Date;         // Time when the transaction was matched
-    processingAt?: Date;      // Time when the transaction was processing
+    processingAt?: Date;
+    currency?: string;      // Time when the transaction was processing
     serviceCompletedAt?: Date; // Time when the service was completed
     transactionCompletedAt?: Date; // Time when the transaction was completed
     failedAt?: Date;          // Time when the transaction failed
@@ -38,6 +41,9 @@ export interface ITransactionSchema {
     // Stripe payment details
     stripePaymentIntentId?: string;
     stripeTransferId?: string;
+
+    isActive?: boolean;
+    note?: string;
     
 }
 

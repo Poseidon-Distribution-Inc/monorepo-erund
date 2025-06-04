@@ -14,10 +14,13 @@ export interface ITransactionSchema {
     historyId?: string;
     disputeId?: string;
     status: TransactionStatus;
-    platformFee?: number;
+    platformFeePercentage?: number;
+    platformFeeAmount?: number;
+    payeeAmount?: number;
     amount?: number;
     matchedAt?: Date;
     processingAt?: Date;
+    currency?: string;
     serviceCompletedAt?: Date;
     transactionCompletedAt?: Date;
     failedAt?: Date;
@@ -28,6 +31,8 @@ export interface ITransactionSchema {
     releaseAt?: Date;
     stripePaymentIntentId?: string;
     stripeTransferId?: string;
+    isActive?: boolean;
+    note?: string;
 }
 export interface ITransaction extends ITransactionSchema {
     id: string;
