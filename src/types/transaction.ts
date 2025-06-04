@@ -20,6 +20,7 @@ export interface ITransactionSchema {
     status: TransactionStatus;
 
     platformFee?: number;      // Platform fee
+    platformFeeAmount?: number; // Platform fee amount
     matchedAt?: Date;         // Time when the transaction was matched
     processingAt?: Date;      // Time when the transaction was processing
     serviceCompletedAt?: Date; // Time when the service was completed
