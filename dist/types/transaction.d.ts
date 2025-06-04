@@ -1,4 +1,4 @@
-export type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "service_completed_accepted" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
+export type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "payment_completed" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
 export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
 type PostType = "bid" | "take";
 export interface ITransactionSchema {
