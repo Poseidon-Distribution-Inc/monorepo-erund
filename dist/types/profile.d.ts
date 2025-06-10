@@ -10,6 +10,7 @@ export interface IProfileSchema {
     bio?: string;
     isActive: boolean;
     role: 'user' | 'admin' | 'runner';
+    photoUrl?: string | null;
 }
 export interface IProfile extends IProfileSchema {
     id: string;
