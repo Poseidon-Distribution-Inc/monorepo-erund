@@ -1,8 +1,9 @@
 type PostType = "bidded" | "fixed";
 export interface IPostSchema {
-    transactionId?:string;
+    transactionId?: string;
     postType: PostType;
     posterId: string;
+    posterName: string;
     choreType: string;
     otherChoreType: string;
     description: string;
@@ -10,8 +11,16 @@ export interface IPostSchema {
     quantifyValue: string;
     rate: number;
     note: string;
-    pickupLocation: {address: string, latitude: number, longitude: number};
-    dropOffLocation?: {address: string, latitude: number, longitude: number};
+    pickupLocation: {
+        address: string;
+        latitude: number;
+        longitude: number;
+    };
+    dropOffLocation?: {
+        address: string;
+        latitude: number;
+        longitude: number;
+    };
     dateCompleted: string;
     receiverName: string;
     receiverContact: string;
@@ -23,7 +32,6 @@ export interface IPostSchema {
     status: string;
     photos?: string[];
 }
-
 export interface IPost extends IPostSchema {
     id: string;
     runnerId?: string;
@@ -33,7 +41,6 @@ export interface IPost extends IPostSchema {
     updatedAt: Date;
     isActive: boolean;
 }
-
 interface APIPostErrorResponse {
     error: string;
 }
