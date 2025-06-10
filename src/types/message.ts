@@ -1,4 +1,5 @@
 export interface IMessageSchema {
+  transactionId: string;
   message: string;
   authorId: string;
   recipientId: string;
