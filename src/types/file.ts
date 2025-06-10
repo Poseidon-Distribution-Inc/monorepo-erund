@@ -9,7 +9,7 @@ export interface IFileBase {
 export interface IFileSchema {
   userId: string;
   postId: string;
-  fileType: 'profile' | 'errand';
+  fileType: 'profile' | 'errand' | 'unsorted';
   file: IFileBase;
 }
 export interface IFile extends IFileSchema {
