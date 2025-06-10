@@ -8,8 +8,9 @@ export interface IFileBase {
 }
 export interface IFileSchema {
     userId: string;
-    profile: IFileBase;
-    company: IFileBase;
+    postId: string;
+    fileType: 'profile' | 'errand';
+    file: IFileBase;
 }
 export interface IFile extends IFileSchema {
     id: string;
