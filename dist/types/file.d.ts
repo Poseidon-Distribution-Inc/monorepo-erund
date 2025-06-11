@@ -3,6 +3,11 @@ export interface IFileBase {
     fileName: string;
     mimeType: string;
     publicLink: string;
+    geotag?: {
+        latitude: number;
+        longitude: number;
+        address?: string;
+    } | null;
     createdAt: Date;
     updatedAt: Date;
 }

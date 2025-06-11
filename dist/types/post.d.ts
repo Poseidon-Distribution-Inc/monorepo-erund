@@ -30,7 +30,10 @@ export interface IPostSchema {
     startDateTime: string;
     endDateTime: string;
     status: string;
-    photos?: string[];
+    photos?: {
+        fileId: string;
+        publicLink: string;
+    }[];
 }
 export interface IPost extends IPostSchema {
     id: string;
