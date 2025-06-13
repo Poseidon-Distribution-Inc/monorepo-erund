@@ -35,3 +35,4 @@ __exportStar(require("./types/transaction"), exports);
 __exportStar(require("./types/history"), exports);
 __exportStar(require("./types/dispute"), exports);
 __exportStar(require("./types/eventBroadcast"), exports);
+__exportStar(require("./types/notification"), exports);
