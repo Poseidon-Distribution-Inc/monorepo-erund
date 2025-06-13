@@ -18,6 +18,7 @@ export interface IPostSchema {
     rate: number;
     note: string;
     pickupLocation: {
+        address: string;
         latitude?: number;
         longitude?: number;
         city?: string;
@@ -34,6 +35,7 @@ export interface IPostSchema {
         formattedAddress?: string;
     };
     dropOffLocation?: {
+        address: string;
         latitude?: number;
         longitude?: number;
         city?: string;
