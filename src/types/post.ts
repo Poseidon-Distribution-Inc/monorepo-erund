@@ -1,10 +1,8 @@
 interface GeoTag {
-    latitude:  number;
+    latitude: number;
     longitude: number;
-    address?:  string;
-  }
-
-
+    address?: string;
+}
 
 type PostType = "bidded" | "fixed";
 export interface IPostSchema {
@@ -38,6 +36,8 @@ export interface IPostSchema {
     startDateTime: string;
     endDateTime: string;
     status: string;
+    runnerComplete: boolean;
+    taskerVerified: boolean;
     photos?: {
         fileId: string;
         publicLink: string;

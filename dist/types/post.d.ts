@@ -30,6 +30,8 @@ export interface IPostSchema {
     startDateTime: string;
     endDateTime: string;
     status: string;
+    runnerComplete: boolean;
+    taskerVerified: boolean;
     photos?: {
         fileId: string;
         publicLink: string;
