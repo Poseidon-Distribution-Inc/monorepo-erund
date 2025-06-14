@@ -12,6 +12,7 @@ export interface IPostSchema {
     rate: number;
     note: string;
     pickupLocation: {
+        address: string;
         latitude?: number;
         longitude?: number;
         city?: string;
@@ -28,6 +29,7 @@ export interface IPostSchema {
         formattedAddress?: string;
     };
     dropOffLocation?: {
+        address: string;
         latitude?: number;
         longitude?: number;
         city?: string;
@@ -52,6 +54,8 @@ export interface IPostSchema {
     startDateTime: string;
     endDateTime: string;
     status: string;
+    runnerComplete: boolean;
+    taskerVerified: boolean;
     photos?: {
         fileId: string;
         publicLink: string;
