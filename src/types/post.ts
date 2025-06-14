@@ -4,7 +4,7 @@ interface GeoTag {
     address?: string;
 }
 
-type PostType = "bidded" | "fixed";
+type PostType = "bid" | "take";
 export interface IPostSchema {
     transactionId?: string;
     postType: PostType;
@@ -66,6 +66,10 @@ export interface IPostSchema {
         fileId: string;
         publicLink: string;
     }[];
+    location?: {
+        type: string;
+        coordinates: [number, number]; // [longitude, latitude]
+    };
     myDistance?: number;
 }
 export interface IPost extends IPostSchema {
