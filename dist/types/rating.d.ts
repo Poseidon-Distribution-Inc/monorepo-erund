@@ -12,7 +12,7 @@ export interface IRating extends IRatingSchema {
     createdAt: Date;
     updatedAt: Date;
 }
-interface IRatingResponse {
+export interface IRatingResponse {
     averageRating?: number;
     totalRatings?: number;
     ratings: IRating[];
