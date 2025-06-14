@@ -56,6 +56,7 @@ export interface IPostSchema {
         fileId: string;
         publicLink: string;
     }[];
+    myDistance?: number;
 }
 export interface IPost extends IPostSchema {
     id: string;
