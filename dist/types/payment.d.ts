@@ -1,8 +1,8 @@
 export type paymentStatus = "pending" | "held" | "completed" | "disputed" | "refunded" | "failed" | "processing" | "cancelled";
 export interface IPaymentSchema {
     transactionId: string;
-    payorUserId: string;
-    payeeUserId: string;
+    posterId: string;
+    runnerId: string;
     currency: string;
     baseFeeAmount: number;
     platformFeePercentage: number;
@@ -38,7 +38,7 @@ interface APIPaymentSuccessResponse {
 }
 export type APIPaymentResponse = APIPaymentSuccessResponse | APIPaymentErrorResponse;
 export interface APICreatePaymentRequest {
-    payment: Omit<IPaymentSchema, 'status' | 'isActive' | 'heldAt' | 'completedAt' | 'disputedAt' | 'disputeResolvedAt' | 'autoReleaseDate'>;
+    payment: Omit<IPaymentSchema, "status" | "isActive" | "heldAt" | "completedAt" | "disputedAt" | "disputeResolvedAt" | "autoReleaseDate">;
 }
 export interface APIUpdatePaymentRequest {
     payment: Partial<IPaymentSchema>;
