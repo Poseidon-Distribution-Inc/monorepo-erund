@@ -18,16 +18,22 @@ export interface IPaymentSchema {
    baseFeeAmount: number; 
     
     // PLATFORM 
+    platformPercentage: number;
+    platforFixedFee: number;
     platformFeeAmount: number;
 
     //STRIPE
+    stripeFixedFee: number;
+    stripeFeePercentage: number;
     stripeFeeAmount: number;
 
-     //TAX
+    //TAX
+    taxFeePercentage: number;
     taxFeeAmount: number;
 
     //PAYEE
     payeeAmount: number;
+    tipAmount: number;
 
     //TOTAL
     totalAmount: number;
