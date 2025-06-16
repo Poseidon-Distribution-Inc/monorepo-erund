@@ -4,12 +4,8 @@ export interface IPaymentSchema {
     payorUserId: string;
     payeeUserId: string;
     currency: string;
-    initialAmount?: number;
-    finalAmount?: number;
-    fullAmount?: number;
-    platformAmount?: number;
     baseFeeAmount: number;
-    platformPercentage: number;
+    platformFeePercentage: number;
     platforFixedFee: number;
     platformFeeAmount: number;
     stripeFixedFee: number;
@@ -18,7 +14,7 @@ export interface IPaymentSchema {
     taxFeePercentage: number;
     taxFeeAmount: number;
     payeeAmount: number;
-    tipAmount: number;
+    tipAmount?: number;
     totalAmount: number;
     stripePaymentIntentId?: string;
     autoReleaseDate: Date;

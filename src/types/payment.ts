@@ -8,17 +8,13 @@ export interface IPaymentSchema {
 
     currency: string;
 
-    // BID TYPE
-    initialAmount?: number; //amount for bid
-    finalAmount?: number;  //amount for bid
-    fullAmount?: number;  //amount for fixed
-    platformAmount?: number;
+
 
    //BASE
    baseFeeAmount: number; 
     
     // PLATFORM 
-    platformPercentage: number;
+    platformFeePercentage: number;
     platforFixedFee: number;
     platformFeeAmount: number;
 
@@ -33,7 +29,7 @@ export interface IPaymentSchema {
 
     //PAYEE
     payeeAmount: number;
-    tipAmount: number;
+    tipAmount?: number;
 
     //TOTAL
     totalAmount: number;

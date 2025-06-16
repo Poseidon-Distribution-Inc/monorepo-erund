@@ -20,14 +20,13 @@ export interface ITransactionSchema {
     disputeId?: string;        // Related dispute ID
     status: string;
 
-    platformFeePercentage?: number;
 
-    baseAmount?: number; // Total amount
-
+   
+    //BASE
     baseFeeAmount: number; 
     
     // PLATFORM 
-    platformPercentage: number;
+    platformFeePercentage: number;
     platforFixedFee: number;
     platformFeeAmount: number;
 
@@ -42,7 +41,7 @@ export interface ITransactionSchema {
 
     //PAYEE
     payeeAmount: number;
-    tipAmount: number;
+    tipAmount?: number;
 
     //TOTAL
     totalAmount: number;
