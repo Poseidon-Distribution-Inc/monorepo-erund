@@ -7,22 +7,41 @@ export interface IPaymentSchema {
     payeeUserId: string;
 
     currency: string;
-    initialAmount: number; //amount for bid
-    finalAmount: number;  //amount for bid
-    fullAmount: number;  //amount for fixed
-    platformAmount: number;
-    payeeAmount: number;
-    platformFee: number;
-    
-    stripePaymentIntentId?: string;
-  
-    autoReleaseDate: Date;
-    stripeTransferId?: string;
 
-    releaseDate?: Date;
+    // BID TYPE
+    initialAmount?: number; //amount for bid
+    finalAmount?: number;  //amount for bid
+    fullAmount?: number;  //amount for fixed
+    platformAmount?: number;
+
+   //BASE
+   baseFeeAmount: number; 
     
+    // PLATFORM 
+    platformFeeAmount: number;
+
+    //STRIPE
+    stripeFeeAmount: number;
+
+     //TAX
+    taxFeeAmount: number;
+
+    //PAYEE
+    payeeAmount: number;
+
+    //TOTAL
+    totalAmount: number;
+
+   
+
+
+
+    stripePaymentIntentId?: string;
+    autoReleaseDate: Date;
+    releaseType?: string;
+    stripeTransferId?: string;
+    releaseDate?: Date;
     status: paymentStatus;
-       
     isActive: boolean;
 }
 
