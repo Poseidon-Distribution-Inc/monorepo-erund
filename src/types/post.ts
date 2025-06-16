@@ -4,7 +4,7 @@ interface GeoTag {
     address?: string;
 }
 
-type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "service_completed_accepted" |  "payment_completed" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
+type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "service_completed_accepted" |  "service_completed_paid" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
 type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
 
 type PostType = "bid" | "take";
