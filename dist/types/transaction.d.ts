@@ -16,9 +16,13 @@ export interface ITransactionSchema {
     disputeId?: string;
     status: string;
     platformFeePercentage?: number;
-    platformFeeAmount?: number;
+    baseAmount?: number;
+    baseFeeAmount: number;
+    platformFeeAmount: number;
+    stripeFeeAmount: number;
+    taxFeeAmount: number;
     payeeAmount: number;
-    amount?: number;
+    totalAmount: number;
     matchedAt?: Date;
     processingAt?: Date;
     currency?: string;

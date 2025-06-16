@@ -21,9 +21,25 @@ export interface ITransactionSchema {
     status: string;
 
     platformFeePercentage?: number;
-    platformFeeAmount?: number; 
-    payeeAmount: number;     // Amount that goes to payee after platform fee
-    amount?: number; // Total amount
+
+    baseAmount?: number; // Total amount
+
+    baseFeeAmount: number; 
+    
+    // PLATFORM 
+    platformFeeAmount: number;
+
+    //STRIPE
+    stripeFeeAmount: number;
+
+     //TAX
+    taxFeeAmount: number;
+
+    //PAYEE
+    payeeAmount: number;
+
+    //TOTAL
+    totalAmount: number;
     
     matchedAt?: Date;         // Time when the transaction was matched
     processingAt?: Date;
