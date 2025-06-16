@@ -8,8 +8,6 @@ export interface IPaymentSchema {
 
     currency: string;
 
-
-
    //BASE
    baseFeeAmount: number; 
     
@@ -33,10 +31,6 @@ export interface IPaymentSchema {
 
     //TOTAL
     totalAmount: number;
-
-   
-
-
 
     stripePaymentIntentId?: string;
     autoReleaseDate: Date;
