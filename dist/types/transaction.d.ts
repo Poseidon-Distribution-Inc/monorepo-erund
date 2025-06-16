@@ -1,7 +1,8 @@
-export type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "service_completed_accepted" | "payment_completed" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
-export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
+type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "service_completed_accepted" | "payment_completed" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
+type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
 type PostType = "bid" | "take";
 export interface ITransactionSchema {
+    referenceNum?: string;
     postId: string;
     postType: PostType;
     bidIds?: string[];
@@ -13,7 +14,7 @@ export interface ITransactionSchema {
     chatRoomId?: string;
     historyId?: string;
     disputeId?: string;
-    status: TransactionStatus;
+    status: string;
     platformFeePercentage?: number;
     platformFeeAmount?: number;
     payeeAmount: number;

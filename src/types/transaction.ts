@@ -1,11 +1,12 @@
 import { IDisputeSchema, IDispute } from './dispute';
 import { IHistorySchema, IHistory } from './history';
 
-export type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "service_completed_accepted" |  "payment_completed" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
-export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
+type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "service_completed_accepted" |  "payment_completed" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
+type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
 type PostType = "bid" | "take";
 
 export interface ITransactionSchema {
+    referenceNum?: string;
     postId: string;            // Related post ID
     postType: PostType;     // Type of post
     bidIds?: string[];             // Related bid ID
@@ -17,7 +18,7 @@ export interface ITransactionSchema {
     chatRoomId?: string;       // Related chat room ID
     historyId?: string;        // Related history ID
     disputeId?: string;        // Related dispute ID
-    status: TransactionStatus;
+    status: string;
 
     platformFeePercentage?: number;
     platformFeeAmount?: number; 
@@ -50,6 +51,7 @@ export interface ITransactionSchema {
 
 export interface ITransaction extends ITransactionSchema {
     id: string;
+
     createdAt: Date;
     updatedAt: Date;
 }

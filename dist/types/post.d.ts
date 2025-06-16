@@ -1,3 +1,4 @@
+type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "service_completed_accepted" | "payment_completed" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
 type PostType = "bid" | "take";
 export interface IPostSchema {
     transactionId?: string;
@@ -53,7 +54,7 @@ export interface IPostSchema {
     mass: string;
     startDateTime: string;
     endDateTime: string;
-    status: string;
+    status: TransactionStatus;
     runnerComplete: boolean;
     taskerVerified: boolean;
     photos?: {
