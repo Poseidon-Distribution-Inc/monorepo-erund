@@ -20,10 +20,31 @@ export interface ITransactionSchema {
     disputeId?: string;        // Related dispute ID
     status: string;
 
-    platformFeePercentage?: number;
-    platformFeeAmount?: number; 
-    payeeAmount: number;     // Amount that goes to payee after platform fee
-    amount?: number; // Total amount
+
+   
+    //BASE
+    baseFeeAmount: number; 
+    
+    // PLATFORM 
+    platformFeePercentage: number;
+    platforFixedFee: number;
+    platformFeeAmount: number;
+
+    //STRIPE
+    stripeFixedFee: number;
+    stripeFeePercentage: number;
+    stripeFeeAmount: number;
+
+     //TAX
+    taxFeePercentage: number;
+    taxFeeAmount: number;
+
+    //PAYEE
+    payeeAmount: number;
+    tipAmount?: number;
+
+    //TOTAL
+    totalAmount: number;
     
     matchedAt?: Date;         // Time when the transaction was matched
     processingAt?: Date;

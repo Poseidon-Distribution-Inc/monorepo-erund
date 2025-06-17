@@ -1,17 +1,24 @@
 export type paymentStatus = "pending" | "held" | "completed" | "disputed" | "refunded" | "failed" | "processing" | "cancelled";
 export interface IPaymentSchema {
     transactionId: string;
-    payorUserId: string;
-    payeeUserId: string;
+    posterId: string;
+    runnerId: string;
     currency: string;
-    initialAmount: number;
-    finalAmount: number;
-    fullAmount: number;
-    platformAmount: number;
+    baseFeeAmount: number;
+    platformFeePercentage: number;
+    platforFixedFee: number;
+    platformFeeAmount: number;
+    stripeFixedFee: number;
+    stripeFeePercentage: number;
+    stripeFeeAmount: number;
+    taxFeePercentage: number;
+    taxFeeAmount: number;
     payeeAmount: number;
-    platformFee: number;
+    tipAmount?: number;
+    totalAmount: number;
     stripePaymentIntentId?: string;
     autoReleaseDate: Date;
+    releaseType?: string;
     stripeTransferId?: string;
     releaseDate?: Date;
     status: paymentStatus;
@@ -31,7 +38,7 @@ interface APIPaymentSuccessResponse {
 }
 export type APIPaymentResponse = APIPaymentSuccessResponse | APIPaymentErrorResponse;
 export interface APICreatePaymentRequest {
-    payment: Omit<IPaymentSchema, 'status' | 'isActive' | 'heldAt' | 'completedAt' | 'disputedAt' | 'disputeResolvedAt' | 'autoReleaseDate'>;
+    payment: Omit<IPaymentSchema, "status" | "isActive" | "heldAt" | "completedAt" | "disputedAt" | "disputeResolvedAt" | "autoReleaseDate">;
 }
 export interface APIUpdatePaymentRequest {
     payment: Partial<IPaymentSchema>;
