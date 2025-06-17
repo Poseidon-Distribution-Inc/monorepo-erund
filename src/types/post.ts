@@ -4,7 +4,18 @@ interface GeoTag {
     address?: string;
 }
 
-type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "service_completed_accepted" |  "service_completed_paid" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
+type TransactionStatus =
+    | "awaiting_match"
+    | "matched"
+    | "processing"
+    | "service_completed"
+    | "service_completed_accepted"
+    | "service_completed_paid"
+    | "transaction_completed"
+    | "failed"
+    | "disputed"
+    | "refunded"
+    | "cancelled";
 type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
 
 type PostType = "bid" | "take";
@@ -12,7 +23,7 @@ export interface IPostSchema {
     transactionId?: string;
     postType: PostType;
     posterId: string;
-    posterName: string;
+    posterName?: string;
     choreType: string;
     otherChoreType: string;
     description: string;
@@ -78,6 +89,7 @@ export interface IPostSchema {
 export interface IPost extends IPostSchema {
     id: string;
     runnerId?: string;
+    runnerName?: string;
     orderNum?: string;
     referenceNum?: string;
     createdAt: Date;

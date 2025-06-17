@@ -4,7 +4,7 @@ export interface IPostSchema {
     transactionId?: string;
     postType: PostType;
     posterId: string;
-    posterName: string;
+    posterName?: string;
     choreType: string;
     otherChoreType: string;
     description: string;
@@ -70,6 +70,7 @@ export interface IPostSchema {
 export interface IPost extends IPostSchema {
     id: string;
     runnerId?: string;
+    runnerName?: string;
     orderNum?: string;
     referenceNum?: string;
     createdAt: Date;
