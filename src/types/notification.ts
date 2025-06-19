@@ -12,6 +12,7 @@ export interface INotificationSchema {
     biddingId?: string;
     biddingStatus?: biddingStatusEnum;
     postId?: string;
+    postStatus?: string;
     bidderId?: string;
     bidderName?: string;
     biddingAmount?: string;
@@ -22,6 +23,12 @@ export interface INotificationSchema {
     previousStatus?: string;
     newStatus?: string;
 }
-export declare const isBiddingNotification: (notification: INotificationSchema) => boolean;
-export declare const isMessageNotification: (notification: INotificationSchema) => boolean;
-export declare const isPostStatusNotification: (notification: INotificationSchema) => boolean;
+export declare const isBiddingNotification: (
+    notification: INotificationSchema
+) => boolean;
+export declare const isMessageNotification: (
+    notification: INotificationSchema
+) => boolean;
+export declare const isPostStatusNotification: (
+    notification: INotificationSchema
+) => boolean;

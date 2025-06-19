@@ -12,6 +12,7 @@ export interface INotificationSchema {
     biddingId?: string;
     biddingStatus?: biddingStatusEnum;
     postId?: string;
+    postStatus?: string;
     bidderId?: string;
     bidderName?: string;
     biddingAmount?: string;
