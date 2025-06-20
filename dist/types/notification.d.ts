@@ -1,9 +1,10 @@
 import { biddingStatusEnum } from "./bidding";
 export type NotificationType = "bidding" | "message" | "post_status" | "system";
+type NotifTitle = "new_post" | "post_accepted" | "post_completed" | "post_completion_verified" | "new_message";
 export interface INotificationSchema {
     _id?: string;
     userId: string;
-    title: string;
+    title: NotifTitle;
     message: string;
     notifType: NotificationType;
     isRead?: boolean;
@@ -26,3 +27,4 @@ export interface INotificationSchema {
 export declare const isBiddingNotification: (notification: INotificationSchema) => boolean;
 export declare const isMessageNotification: (notification: INotificationSchema) => boolean;
 export declare const isPostStatusNotification: (notification: INotificationSchema) => boolean;
+export {};
