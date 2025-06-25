@@ -1,10 +1,12 @@
-export type ticketStatus = "open" | "close";
+export type ticketStatus = "open" | "pending" | "close";
+export type ticketUrgency = "low" | "medium" | "high" | "critical";
 
 export interface ITicketSchema {
     userId: string;
     title: string;
     content: string;
     status: ticketStatus;
+    urgency: ticketUrgency;
     isActive: boolean;
 }
 
