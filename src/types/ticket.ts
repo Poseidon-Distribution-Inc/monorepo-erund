@@ -1,6 +1,7 @@
 export type ticketStatus = "open" | "close";
 
 export interface ITicketSchema {
+    userId: string;
     title: string;
     content: string;
     status: ticketStatus;
