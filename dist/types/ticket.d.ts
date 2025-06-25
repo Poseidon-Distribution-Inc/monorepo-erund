@@ -5,7 +5,7 @@ export interface ITicketSchema {
     status: ticketStatus;
     isActive: boolean;
 }
-export interface ITicket {
+export interface ITicket extends ITicketSchema {
     id: string;
     createAt: Date;
     updatedAt: Date;

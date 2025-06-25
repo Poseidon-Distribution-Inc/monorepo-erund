@@ -7,7 +7,7 @@ export interface ITicketSchema {
     isActive: boolean;
 }
 
-export interface ITicket {
+export interface ITicket extends ITicketSchema {
     id: string;
     createAt: Date;
     updatedAt: Date;
