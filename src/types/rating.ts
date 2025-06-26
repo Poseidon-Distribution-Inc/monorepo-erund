@@ -24,6 +24,7 @@ interface IUserProfile {
     photoUrl?: string | null;
     totalTasks?: number;
     totalClients?: number;
+    totalPosts?: number;
 }
 export interface IRatingResponse {
     averageRating?: number;
