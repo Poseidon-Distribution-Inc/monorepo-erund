@@ -5,19 +5,33 @@ export interface IRatingSchema {
     targetType: string;
     score: number;
     comment?: string;
+    reviewer?: IReviewer;
     isActive: boolean;
 }
-
 export interface IRating extends IRatingSchema {
     id: string;
     createdAt: Date;
     updatedAt: Date;
 }
-// Response shapes
+interface IReviewer {
+    firstName: string;
+    lastName: string;
+    photoUrl: string;
+}
+interface IUserProfile {
+    firstName?: string;
+    lastName?: string;
+    photoUrl?: string | null;
+    totalTasks?: number;
+    totalClients?: number;
+    totalPosts?: number;
+}
 export interface IRatingResponse {
     averageRating?: number;
     totalRatings?: number;
-    ratings: IRating[]; 
+    ratingCounts?: Record<number, number>;
+    userProfile?: IUserProfile;
+    ratings?: IRating[]; 
 }
 interface ISingleRatingResponse {
     rating: IRating;
@@ -29,15 +43,11 @@ export interface APIRatingSuccessResponse<T = IRatingResponse | ISingleRatingRes
     message: string;
     data: T;
 }
-export type APIRatingResponse =
-    | APIRatingSuccessResponse<IRatingResponse>
-    | APIRatingSuccessResponse<ISingleRatingResponse>
-    | APIRatingErrorResponse;
-
-// Request shapes
+export type APIRatingResponse = APIRatingSuccessResponse<IRatingResponse> | APIRatingSuccessResponse<ISingleRatingResponse> | APIRatingErrorResponse;
 export interface APICreateRatingRequest {
     ratings: IRating;
 }
 export interface APIUpdateRatingRequest {
     rating: Partial<IRating>;
 }
+export {};
