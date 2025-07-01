@@ -74,6 +74,7 @@ export interface IPostSchema {
         coordinates: [number, number]; // [longitude, latitude]
     };
     myDistance?: number;
+    runnerFee?: number;
 }
 export interface IPost extends IPostSchema {
     id: string;
