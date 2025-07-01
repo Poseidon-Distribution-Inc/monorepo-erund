@@ -14,7 +14,7 @@ export interface ILocalUserSchema extends IBaseUserSchema {
     lastName: string;
     phoneNumber: string;
     password: string;
-    postalCode: string;
+    postalCode?: string;
     countryCode?: string;
 }
 export interface ILocalUser extends ILocalUserSchema {}
