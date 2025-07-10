@@ -73,6 +73,7 @@ export interface IPost extends IPostSchema {
     id: string;
     runnerId?: string;
     runnerName?: string;
+    runnerPhotoUrl?: string;
     orderNum?: string;
     referenceNum?: string;
     createdAt: Date;
