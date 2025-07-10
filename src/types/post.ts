@@ -86,6 +86,7 @@ export interface IPostSchema {
     };
     myDistance?: number;
     runnerFee?: number;
+    stripePaymentIntentId?: string;
 }
 export interface IPost extends IPostSchema {
     id: string;
