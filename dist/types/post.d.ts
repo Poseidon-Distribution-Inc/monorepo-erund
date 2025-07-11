@@ -5,6 +5,7 @@ export interface IPostSchema {
     postType: PostType;
     posterId: string;
     posterName?: string;
+    posterPhotoUrl?: string;
     choreType: string;
     otherChoreType: string;
     description: string;
