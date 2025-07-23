@@ -88,17 +88,17 @@ export interface IPostSchema {
     myDistance?: number;
     runnerFee?: number;
     stripePaymentIntentId?: string;
-}
-export interface IPost extends IPostSchema {
-    id: string;
     runnerId?: string;
     runnerName?: string;
     runnerPhotoUrl?: string;
     orderNum?: string;
     referenceNum?: string;
-    createdAt: Date;
-    updatedAt: Date;
     isActive: boolean;
+}
+export interface IPost extends IPostSchema {
+    id: string;
+    createdAt: Date;
+    updatedAt: Date; 
 }
 interface APIPostErrorResponse {
     error: string;

@@ -2,6 +2,7 @@
 export interface IDisputeSchema {  
     postId:string;   
     authorId:string;           // Unique identifier
+    reason: string;
     content: string;           // Dispute content/description
     resolution?: string;        // Resolution of the dispute
     adminComment?: string;     // Administrator's comment on the dispute
