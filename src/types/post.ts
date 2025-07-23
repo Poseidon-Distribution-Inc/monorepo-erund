@@ -81,6 +81,10 @@ export interface IPostSchema {
         fileId: string;
         publicLink: string;
     }[];
+    completionProofPhotos?: {
+        fileId: string;
+        publicLink: string;
+    }[];
     location?: {
         type: string;
         coordinates: [number, number]; // [longitude, latitude]
