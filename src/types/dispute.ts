@@ -1,7 +1,7 @@
 // Dispute schema
 export interface IDisputeSchema {  
     postId:string;
-    transactionId:string; 
+    referenceNum:string; 
     authorId:string;           // Unique identifier
     reason: string;
     content: string;           // Dispute content/description

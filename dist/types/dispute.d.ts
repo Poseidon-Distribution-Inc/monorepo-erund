@@ -1,6 +1,6 @@
 export interface IDisputeSchema {
     postId: string;
-    transactionId: string;
+    referenceNum: string;
     authorId: string;
     reason: string;
     content: string;
