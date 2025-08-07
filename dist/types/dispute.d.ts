@@ -2,6 +2,7 @@ export interface IDisputeSchema {
     postId: string;
     referenceNum: string;
     authorId: string;
+    authorRole: string;
     reason: string;
     content: string;
     resolution?: string;

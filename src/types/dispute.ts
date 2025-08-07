@@ -3,6 +3,7 @@ export interface IDisputeSchema {
     postId:string;
     referenceNum:string; 
     authorId:string;           // Unique identifier
+    authorRole:string;
     reason: string;
     content: string;           // Dispute content/description
     resolution?: string;        // Resolution of the dispute
