@@ -1,7 +1,7 @@
 import { IDisputeSchema, IDispute } from './dispute';
 import { IHistorySchema, IHistory } from './history';
 
-export type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "service_completed_accepted" |  "service_completed_paid" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
+export type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "service_completed_accepted" |  "service_completed_paid" | "transaction_completed" | "failed" | "disputed" | "refunded" | "released" | "resolved_split" | "cancelled";
 export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
 type PostType = "bid" | "take";
 

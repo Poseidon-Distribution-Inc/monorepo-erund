@@ -15,6 +15,8 @@ type TransactionStatus =
     | "failed"
     | "disputed"
     | "refunded"
+    | "released"
+    | "resolved_split"
     | "cancelled";
 type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
 

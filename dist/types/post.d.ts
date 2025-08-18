@@ -1,4 +1,4 @@
-type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "service_completed_accepted" | "service_completed_paid" | "transaction_completed" | "failed" | "disputed" | "refunded" | "cancelled";
+type TransactionStatus = "awaiting_match" | "matched" | "processing" | "service_completed" | "service_completed_accepted" | "service_completed_paid" | "transaction_completed" | "failed" | "disputed" | "refunded" | "released" | "resolved_split" | "cancelled";
 type PostType = "bid" | "take";
 export interface IPostSchema {
     transactionId?: string;
