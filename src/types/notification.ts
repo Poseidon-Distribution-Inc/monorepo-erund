@@ -5,7 +5,8 @@ type NotifTitle =
     | "post_accepted"
     | "post_completed"
     | "post_completion_verified"
-    | "new_message";
+    | "new_message"
+    | "post_auto_cancelled";
 export interface INotificationSchema {
     _id?: string;
     userId: string;
