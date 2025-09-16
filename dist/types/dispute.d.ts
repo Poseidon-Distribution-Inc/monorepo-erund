@@ -3,6 +3,7 @@ export interface IDisputeSchema {
     referenceNum: string;
     authorId: string;
     authorRole: string;
+    amount: number;
     reason: string;
     content: string;
     resolution?: string;

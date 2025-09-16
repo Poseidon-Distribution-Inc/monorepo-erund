@@ -8,6 +8,7 @@ type TransactionStatus =
     | "awaiting_match"
     | "matched"
     | "processing"
+    | "processing_payment"
     | "service_completed"
     | "service_completed_accepted"
     | "service_completed_paid"

@@ -4,6 +4,7 @@ export interface IDisputeSchema {
     referenceNum:string; 
     authorId:string;           // Unique identifier
     authorRole:string;
+    amount: number
     reason: string;
     content: string;           // Dispute content/description
     resolution?: string;        // Resolution of the dispute
