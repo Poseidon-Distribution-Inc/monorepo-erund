@@ -6,6 +6,10 @@ export interface IDisputeSchema {
     amount: number;
     reason: string;
     content: string;
+    disputePhotoAttachments?: {
+        fileId: string;
+        publicLink: string;
+    }[];
     resolution?: string;
     adminComment?: string;
     resolveDate: Date;

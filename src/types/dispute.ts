@@ -7,6 +7,10 @@ export interface IDisputeSchema {
     amount: number
     reason: string;
     content: string;           // Dispute content/description
+    disputePhotoAttachments?: {
+        fileId: string;
+        publicLink: string;
+    }[];
     resolution?: string;        // Resolution of the dispute
     adminComment?: string;     // Administrator's comment on the dispute
     resolveDate: Date;        // Date when the dispute was resolved

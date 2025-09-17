@@ -14,7 +14,7 @@ export interface IFileBase {
 export interface IFileSchema {
     userId: string;
     postId: string;
-    fileType: "profile" | "errand" | "unsorted" | "proof";
+    fileType: "profile" | "errand" | "unsorted" | "proof" | "dispute";
     file: IFileBase;
 }
 export interface IFile extends IFileSchema {
