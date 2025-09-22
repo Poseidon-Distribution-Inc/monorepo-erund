@@ -12,7 +12,10 @@ export interface IProfileSchema {
     role: 'user' | 'admin' | 'runner'
     photoUrl?: string | null;
     vehicleNum?: string | null;
-    vehicleUrl?: string | null;
+    vehicleUrl?: {
+        fileId: string;
+        publicLink: string;
+    }[];
 }
 export interface IProfile extends IProfileSchema {
     id: string;
