@@ -12,54 +12,16 @@ export interface IProfileSchema {
     role: 'user' | 'admin' | 'runner';
     photoUrl?: string | null;
     vehicle: {
-        make: {
-            type: string;
-            default: null;
-        };
-        model: {
-            type: string;
-            default: null;
-        };
-        color: {
-            type: string;
-            default: null;
-        };
-        type: {
-            type: string;
-            default: null;
-        };
-        year: {
-            type: number;
-            enum: [
-                "sedan",
-                "suv",
-                "hatchback",
-                "pickup",
-                "van",
-                "motorcycle",
-                "truck",
-                "bus",
-                "convertible",
-                "wagon",
-                "coupe",
-                "other"
-            ];
-            default: null;
-        };
-        vehicleNum: {
-            type: string;
-            default: null;
-        };
-        vehicleUrl: {
-            type: [
-                {
-                    fileId: string;
-                    publicLink: string;
-                }
-            ];
-            default: [];
-        };
-        required: false;
+        make?: string | null;
+        model?: string | null;
+        color?: string | null;
+        type?: 'sedan' | 'suv' | 'hatchback' | 'pickup' | 'van' | 'motorcycle' | 'truck' | 'bus' | 'convertible' | 'wagon' | 'coupe' | 'other' | null;
+        year?: number | null;
+        vehicleNum?: string | null;
+        vehicleUrl: Array<{
+            fileId: string;
+            publicLink: string;
+        }>;
     };
 }
 export interface IProfile extends IProfileSchema {
