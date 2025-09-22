@@ -30,6 +30,20 @@ export interface IProfileSchema {
         },
         year: {
             type: number,
+            enum: [
+              "sedan",
+              "suv",
+              "hatchback",
+              "pickup",
+              "van",
+              "motorcycle",
+              "truck",
+              "bus",
+              "convertible",
+              "wagon",
+              "coupe",
+              "other"
+            ],
             default: null
         },
         vehicleNum: {
