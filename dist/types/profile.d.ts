@@ -11,11 +11,36 @@ export interface IProfileSchema {
     isActive: boolean;
     role: 'user' | 'admin' | 'runner';
     photoUrl?: string | null;
-    vehicleNum?: string | null;
-    vehicleUrl?: {
-        fileId: string;
-        publicLink: string;
-    }[];
+    vehicle: {
+        type: {
+            color: {
+                type: string;
+                default: null;
+            };
+            type: {
+                type: string;
+                default: null;
+            };
+            year: {
+                type: number;
+                default: null;
+            };
+            vehicleNum: {
+                type: string;
+                default: null;
+            };
+            vehicleUrl: {
+                type: [
+                    {
+                        fileId: string;
+                        publicLink: string;
+                    }
+                ];
+                default: [];
+            };
+        };
+        required: false;
+    };
 }
 export interface IProfile extends IProfileSchema {
     id: string;
