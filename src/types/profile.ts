@@ -12,30 +12,36 @@ export interface IProfileSchema {
     role: 'user' | 'admin' | 'runner'
     photoUrl?: string | null;
     vehicle: {
+        make: {
+            type: string,
+            default: null
+        },
+        model: {
+            type: string,
+            default: null
+        }
+        color: {
+            type: string,
+            default: null
+        },
         type: {
-            color: {
-                type: string,
-                default: null
-            },
-            type: {
-                type: string,
-                default: null
-            },
-            year: {
-                type: number,
-                default: null
-            },
-            vehicleNum: {
-                type: string,
-                default: null
-            },
-            vehicleUrl: {
-                type: [{
-                    fileId: string,
-                    publicLink: string
-                }],
-                default: []
-            }
+            type: string,
+            default: null
+        },
+        year: {
+            type: number,
+            default: null
+        },
+        vehicleNum: {
+            type: string,
+            default: null
+        },
+        vehicleUrl: {
+            type: [{
+                fileId: string,
+                publicLink: string
+            }],
+            default: []
         },
         required: false
     }
