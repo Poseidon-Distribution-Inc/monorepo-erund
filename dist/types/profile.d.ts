@@ -11,6 +11,8 @@ export interface IProfileSchema {
     isActive: boolean;
     role: 'user' | 'admin' | 'runner';
     photoUrl?: string | null;
+    vehicleNum?: string | null;
+    vehicleUrl?: string | null;
 }
 export interface IProfile extends IProfileSchema {
     id: string;
