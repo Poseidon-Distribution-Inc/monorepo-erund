@@ -101,7 +101,7 @@ export interface IPostSchema {
     orderNum?: string;
     referenceNum?: string;
     isActive: boolean;
-    deliveryProgress?: 'pickup_in_progress' | 'picked_up' | 'delivery_in_progress' | 'delivered' | null;
+    progress?: 'in_transit' | 'arrived' | 'picked_up' | 'delivery_in_progress' | 'delivered' | null;
 }
 export interface IPost extends IPostSchema {
     id: string;
