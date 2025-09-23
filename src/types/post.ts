@@ -108,7 +108,7 @@ export interface IPostSchema {
         | 'delivery_in_progress'
         | 'delivered'
         | null;
-    runnerCurrentlocation?: {
+    runnerCurrentLocation?: {
         type: string;
         coordinates: [number, number]; // [longitude, latitude]
     };

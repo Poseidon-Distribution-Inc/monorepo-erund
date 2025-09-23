@@ -80,7 +80,7 @@ export interface IPostSchema {
     referenceNum?: string;
     isActive: boolean;
     progress?: 'in_transit' | 'arrived' | 'picked_up' | 'delivery_in_progress' | 'delivered' | null;
-    runnerCurrentlocation?: {
+    runnerCurrentLocation?: {
         type: string;
         coordinates: [number, number];
     };
