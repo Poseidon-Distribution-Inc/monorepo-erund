@@ -84,6 +84,7 @@ export interface IPostSchema {
         type: string;
         coordinates: [number, number];
     };
+    runnerPath?: IPoint[];
 }
 export interface IPost extends IPostSchema {
     id: string;
@@ -103,5 +104,10 @@ export interface APICreatePostRequest {
 }
 export interface APIUpdatePostRequest {
     post: Partial<IPost>;
+}
+export interface IPoint {
+    latitude: number;
+    longitude: number;
+    ts?: string;
 }
 export {};

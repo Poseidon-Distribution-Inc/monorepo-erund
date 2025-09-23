@@ -102,16 +102,17 @@ export interface IPostSchema {
     referenceNum?: string;
     isActive: boolean;
     progress?:
-        | 'in_transit'
-        | 'arrived'
-        | 'picked_up'
-        | 'delivery_in_progress'
-        | 'delivered'
-        | null;
+    | 'in_transit'
+    | 'arrived'
+    | 'picked_up'
+    | 'delivery_in_progress'
+    | 'delivered'
+    | null;
     runnerCurrentLocation?: {
         type: string;
         coordinates: [number, number]; // [longitude, latitude]
     };
+    runnerPath?: IPoint[]; // Melvyn Added this
 }
 export interface IPost extends IPostSchema {
     id: string;
@@ -132,4 +133,12 @@ export interface APICreatePostRequest {
 export interface APIUpdatePostRequest {
     post: Partial<IPost>;
 }
-export {};
+
+// Melvyn Added this
+export interface IPoint {
+    latitude: number;
+    longitude: number;
+    ts?: string; // ISO timestamp
+}
+
+export { };
