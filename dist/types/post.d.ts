@@ -1,5 +1,5 @@
-type TransactionStatus = "awaiting_match" | "matched" | "processing" | "processing_payment" | "service_completed" | "service_completed_accepted" | "service_completed_paid" | "transaction_completed" | "failed" | "disputed" | "refunded" | "released" | "resolved_split" | "cancelled";
-type PostType = "bid" | "take";
+type TransactionStatus = 'awaiting_match' | 'matched' | 'processing' | 'processing_payment' | 'service_completed' | 'service_completed_accepted' | 'service_completed_paid' | 'transaction_completed' | 'failed' | 'disputed' | 'refunded' | 'released' | 'resolved_split' | 'cancelled';
+type PostType = 'bid' | 'take';
 export interface IPostSchema {
     transactionId?: string;
     postType: PostType;
@@ -79,6 +79,11 @@ export interface IPostSchema {
     orderNum?: string;
     referenceNum?: string;
     isActive: boolean;
+    progress?: 'in_transit' | 'arrived' | 'picked_up' | 'delivery_in_progress' | 'delivered' | null;
+    runnerCurrentLocation?: {
+        type: string;
+        coordinates: [number, number];
+    };
 }
 export interface IPost extends IPostSchema {
     id: string;
