@@ -5,6 +5,7 @@ type NotifTitle =
     | "post_accepted"
     | "post_completed"
     | "post_completion_verified"
+    | "task_progress_updated"
     | "new_message"
     | "post_auto_cancelled";
 export interface INotificationSchema {
