@@ -1,5 +1,5 @@
 import { biddingStatusEnum } from "./bidding";
-export type NotificationType = "bidding" | "message" | "post_status" | "system";
+export type NotificationType = "bidding" | "message" | "post_status" | "system" | "task_progress";
 type NotifTitle =
     | "new_post"
     | "post_accepted"
@@ -7,7 +7,9 @@ type NotifTitle =
     | "post_completion_verified"
     | "task_progress_updated"
     | "new_message"
-    | "post_auto_cancelled";
+    | "post_auto_cancelled"
+    | "pickup_received"
+    | "arrived";
 export interface INotificationSchema {
     _id?: string;
     userId: string;
