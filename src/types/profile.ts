@@ -4,6 +4,7 @@ export interface IProfileSchema {
     lastName?: string;
     email?: string;
     phoneNumber?: string;
+    isContactPublic?: boolean;
     postalCode?: string;
     countryCode?: string;
     skills?: string[];

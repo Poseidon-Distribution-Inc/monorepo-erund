@@ -1,4 +1,4 @@
-type AuthProvider = "local" | "google";
+type AuthProvider = 'local' | 'google';
 interface IBaseUserSchema {
     id: string;
     email: string;
@@ -7,7 +7,7 @@ interface IBaseUserSchema {
     createdAt: Date;
     updatedAt: Date;
     isVerified: boolean;
-    role: "user" | "admin" | "superadmin" | "platform";
+    role: 'user' | 'admin' | 'superadmin' | 'platform' | 'advocates';
 }
 export interface ILocalUserSchema extends IBaseUserSchema {
     firstName: string;
