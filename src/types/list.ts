@@ -39,23 +39,23 @@ export interface IListing extends IListingSchema{
     updatedAt: Date;
 }
 
-interface APIListErrorResponse {
+interface APIListingErrorResponse {
   error: string;
 }
 
-interface APIListSuccessResponse {
+interface APIListingSuccessResponse {
   mesage: string;
   data: IListing | IListing[];
 }
 
-export type APIListResponse =
-  | APIListSuccessResponse
-  | APIListErrorResponse;
+export type APIListingResponse =
+  | APIListingSuccessResponse
+  | APIListingErrorResponse;
 
-export interface APICreateListRequest {
+export interface APICreateListingRequest {
   listings: IListing;
 }
 
-export interface APIUpdateListRequest {
+export interface APIUpdateListingRequest {
   listing: Partial<IListing>;
 }
