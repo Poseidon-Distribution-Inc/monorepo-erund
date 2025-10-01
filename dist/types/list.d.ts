@@ -1,7 +1,8 @@
-type ListStatus = 'published' | 'archived';
-export interface IListSchema {
+type ListingStatus = 'published' | 'archived';
+export interface IListingSchema {
     listerId: string;
     listerName?: string;
+    title: string;
     description: string;
     rate: number;
     location: {
@@ -21,14 +22,14 @@ export interface IListSchema {
         timezone?: string;
         formattedAddress?: string;
     };
-    status: ListStatus;
+    status: ListingStatus;
     photos?: {
         fileId: string;
         publicLink: string;
     };
     isActive: boolean;
 }
-export interface IList extends IListSchema {
+export interface IListing extends IListingSchema {
     id: string;
     createdAt: Date;
     updatedAt: Date;
@@ -38,13 +39,13 @@ interface APIListErrorResponse {
 }
 interface APIListSuccessResponse {
     mesage: string;
-    data: IList | IList[];
+    data: IListing | IListing[];
 }
 export type APIListResponse = APIListSuccessResponse | APIListErrorResponse;
 export interface APICreateListRequest {
-    lists: IList;
+    listings: IListing;
 }
 export interface APIUpdateListRequest {
-    list: Partial<IList>;
+    listing: Partial<IListing>;
 }
 export {};
