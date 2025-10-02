@@ -1,16 +1,19 @@
 export type paymentStatus =
   | "pending"
   | "held"
+  | "paid"
+  | "transferred"
   | "completed"
-  | "disputed"
-  | "refunded"
+  | "dispute_refunded"
+  | "dispute_resolved"
+  | "dispute_split"
   | "failed"
   | "processing"
   | "cancelled";
 
 export interface IPaymentSchema {
   transactionId: string;
-
+  referenceNum: string;
   posterId: string;
   runnerId: string;
   currency: string;
@@ -20,7 +23,7 @@ export interface IPaymentSchema {
 
   // PLATFORM
   platformFeePercentage: number;
-  platforFixedFee: number;
+  platformFixedFee: number;
   platformFeeAmount: number;
 
   //STRIPE
@@ -39,11 +42,21 @@ export interface IPaymentSchema {
   //TOTAL
   totalAmount: number;
 
+  //Stripe IDs
   stripePaymentIntentId?: string;
+  stripeTransferId?: string;
+  stripeChargeId?: string;
+  stripePayoutId?: string;
+
+  transferedAmount?: number;
+  refundAmount?: number;
   autoReleaseDate: Date;
   releaseType?: string;
-  stripeTransferId?: string;
-  releaseDate?: Date;
+  releaseAt?: Date;
+  heldAt?: Date;
+  paidAt?: Date;
+  resolvedAt?: Date;
+  cancelledAt?: Date;
   status: paymentStatus;
   isActive: boolean;
 }
