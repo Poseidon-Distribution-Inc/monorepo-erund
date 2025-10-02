@@ -46,6 +46,7 @@ export interface IPaymentSchema {
   stripePaymentIntentId?: string;
   stripeTransferId?: string;
   stripeChargeId?: string;
+  stripePayoutId?: string;
 
   transferedAmount?: number;
   refundAmount?: number;
