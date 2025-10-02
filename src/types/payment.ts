@@ -5,7 +5,7 @@ export type paymentStatus =
   | "transferred"
   | "completed"
   | "dispute_refunded"
-  | "dispute_resolved"
+  | "dispute_released"
   | "dispute_split"
   | "failed"
   | "processing"

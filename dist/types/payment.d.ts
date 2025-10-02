@@ -1,4 +1,4 @@
-export type paymentStatus = "pending" | "held" | "paid" | "transferred" | "completed" | "dispute_refunded" | "dispute_resolved" | "dispute_split" | "failed" | "processing" | "cancelled";
+export type paymentStatus = "pending" | "held" | "paid" | "transferred" | "completed" | "dispute_refunded" | "dispute_released" | "dispute_split" | "failed" | "processing" | "cancelled";
 export interface IPaymentSchema {
     transactionId: string;
     referenceNum: string;
