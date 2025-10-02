@@ -24,6 +24,7 @@ export interface IProfileSchema {
             publicLink: string;
         }>;
     };
+    expoPushToken?: string | null;
 }
 export interface IProfile extends IProfileSchema {
     id: string;
