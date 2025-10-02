@@ -37,3 +37,4 @@ __exportStar(require("./types/dispute"), exports);
 __exportStar(require("./types/eventBroadcast"), exports);
 __exportStar(require("./types/notification"), exports);
 __exportStar(require("./types/ticket"), exports);
+__exportStar(require("./types/list"), exports);

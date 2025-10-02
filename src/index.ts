@@ -21,3 +21,5 @@ export * from "./types/dispute";
 export * from "./types/eventBroadcast";
 export * from "./types/notification";
 export * from "./types/ticket";
+export * from "./types/list";
+
