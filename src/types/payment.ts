@@ -50,6 +50,7 @@ export interface IPaymentSchema {
 
   transferedAmount?: number;
   refundAmount?: number;
+  payoutAmount?: number;
   autoReleaseDate: Date;
   releaseType?: string;
   releaseAt?: Date;

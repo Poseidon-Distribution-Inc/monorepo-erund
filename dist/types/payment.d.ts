@@ -23,6 +23,7 @@ export interface IPaymentSchema {
     stripePayoutId?: string;
     transferedAmount?: number;
     refundAmount?: number;
+    payoutAmount?: number;
     autoReleaseDate: Date;
     releaseType?: string;
     releaseAt?: Date;
