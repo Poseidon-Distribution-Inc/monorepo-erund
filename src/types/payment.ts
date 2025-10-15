@@ -54,7 +54,7 @@ export interface IPaymentSchema {
   isActive: boolean;
 
   //INSTANCES
-  ITransactions?: ITransactions[];
+  transactions?: ITransactions[];
 }
 
 export interface IPayment extends IPaymentSchema {

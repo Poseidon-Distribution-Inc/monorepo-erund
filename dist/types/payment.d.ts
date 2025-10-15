@@ -28,7 +28,7 @@ export interface IPaymentSchema {
     cancelledAt?: Date;
     status: paymentStatus;
     isActive: boolean;
-    ITransactions?: ITransactions[];
+    transactions?: ITransactions[];
 }
 export interface IPayment extends IPaymentSchema {
     id: string;
