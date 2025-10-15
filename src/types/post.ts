@@ -113,6 +113,11 @@ export interface IPostSchema {
         coordinates: [number, number]; // [longitude, latitude]
     };
     runnerPath?: IPoint[]; // Melvyn Added this
+    previousRunners?: {
+        runnerId: string;
+        removedAt: Date;
+        reason: string;
+    }[];
 }
 export interface IPost extends IPostSchema {
     id: string;
