@@ -18,6 +18,7 @@ export interface IPaymentSchema {
     payeeAmount: number;
     tipAmount?: number;
     totalAmount: number;
+    refundAmount: number;
     autoReleaseDate: Date;
     releaseAt?: Date;
     heldAt?: Date;

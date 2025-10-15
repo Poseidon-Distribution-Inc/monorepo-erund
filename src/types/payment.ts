@@ -42,6 +42,7 @@ export interface IPaymentSchema {
 
   //TOTAL
   totalAmount: number;
+  refundAmount: number
   autoReleaseDate: Date;
   releaseAt?: Date;
   heldAt?: Date;
