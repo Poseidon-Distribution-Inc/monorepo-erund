@@ -28,14 +28,14 @@ export interface IPaymentSchema {
     cancelledAt?: Date;
     status: paymentStatus;
     isActive: boolean;
-    ITransactions?: ITransaction[];
+    ITransactions?: ITransactions[];
 }
 export interface IPayment extends IPaymentSchema {
     id: string;
     createdAt: Date;
     updatedAt: Date;
 }
-interface ITransaction {
+export interface ITransactions {
     type: "charge" | "transfer" | "payout" | "refund" | "dispute";
     stripeId: string;
     amount: number;

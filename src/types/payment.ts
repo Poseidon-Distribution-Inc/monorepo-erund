@@ -54,7 +54,7 @@ export interface IPaymentSchema {
   isActive: boolean;
 
   //INSTANCES
-  ITransactions?: ITransaction[];
+  ITransactions?: ITransactions[];
 }
 
 export interface IPayment extends IPaymentSchema {
@@ -63,7 +63,7 @@ export interface IPayment extends IPaymentSchema {
   updatedAt: Date;
 }
 
-interface ITransaction {
+export interface ITransactions {
   type: "charge" | "transfer" | "payout" | "refund" | "dispute";
   stripeId: string;
   amount: number;
