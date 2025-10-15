@@ -2,6 +2,7 @@ export type paymentStatus = "pending" | "held" | "paid" | "transferred" | "compl
 export interface IPaymentSchema {
     transactionId: string;
     referenceNum: string;
+    stripePaymentIntentId: string;
     posterId: string;
     runnerId: string;
     currency: string;
@@ -17,27 +18,29 @@ export interface IPaymentSchema {
     payeeAmount: number;
     tipAmount?: number;
     totalAmount: number;
-    stripePaymentIntentId?: string;
-    stripeTransferId?: string;
-    stripeChargeId?: string;
-    stripePayoutId?: string;
-    transferedAmount?: number;
-    refundAmount?: number;
-    payoutAmount?: number;
     autoReleaseDate: Date;
-    releaseType?: string;
     releaseAt?: Date;
     heldAt?: Date;
-    paidAt?: Date;
     resolvedAt?: Date;
     cancelledAt?: Date;
     status: paymentStatus;
     isActive: boolean;
+    ITransactions?: ITransaction[];
 }
 export interface IPayment extends IPaymentSchema {
     id: string;
     createdAt: Date;
     updatedAt: Date;
+}
+interface ITransaction {
+    type: "charge" | "transfer" | "payout" | "refund" | "dispute";
+    stripeId: string;
+    amount: number;
+    currency: string;
+    status: "initiated" | "succeeded" | "failed" | "cancelled";
+    meta?: Record<string, any>;
+    feeAmount?: number;
+    createdAt?: Date | string;
 }
 interface APIPaymentErrorResponse {
     error: string;
