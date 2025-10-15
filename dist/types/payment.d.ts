@@ -19,6 +19,8 @@ export interface IPaymentSchema {
     tipAmount?: number;
     totalAmount: number;
     refundAmount: number;
+    transferedAmount: number;
+    payoutAmount: number;
     autoReleaseDate: Date;
     releaseAt?: Date;
     heldAt?: Date;
