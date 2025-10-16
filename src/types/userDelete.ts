@@ -1,7 +1,6 @@
 export interface IUserDeleteSchema {
     userId: string,
     email?: string,
-    deleteOption: 'account_only' | 'delete_all',
     reasons: string[],
     remarks?: string;
     deletedAt?: Date;
