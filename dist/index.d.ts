@@ -22,3 +22,4 @@ export * from "./types/eventBroadcast";
 export * from "./types/notification";
 export * from "./types/ticket";
 export * from "./types/list";
+export * from "./types/userDelete";
