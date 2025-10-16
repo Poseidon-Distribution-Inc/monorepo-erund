@@ -85,6 +85,11 @@ export interface IPostSchema {
         coordinates: [number, number];
     };
     runnerPath?: IPoint[];
+    previousRunners?: {
+        runnerId: string;
+        removedAt: Date;
+        reason: string;
+    }[];
 }
 export interface IPost extends IPostSchema {
     id: string;
