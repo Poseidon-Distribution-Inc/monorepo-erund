@@ -24,6 +24,12 @@ export interface IProfileSchema {
             publicLink: string;
         }>;
     };
+    address: {
+        country?: string | null,
+        state?: string | null,
+        city?: string | null,
+        postalCode?: string | null,
+    }
     expoPushToken?: string[] | null;
 }
 export interface IProfile extends IProfileSchema {
