@@ -7,6 +7,10 @@ export interface ITicketSchema {
     content: string;
     status: ticketStatus;
     urgency: ticketUrgency;
+    photos?: {
+        fileId: string;
+        publicLink: string;
+    }[];
     isActive: boolean;
 }
 
