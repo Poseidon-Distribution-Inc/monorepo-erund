@@ -16,6 +16,7 @@ export interface ILocalUserSchema extends IBaseUserSchema {
     password: string;
     postalCode?: string;
     countryCode?: string;
+    photoUrl?: string;
 }
 export interface ILocalUser extends ILocalUserSchema {}
 export interface IGoogleUserSchema extends IBaseUserSchema {
