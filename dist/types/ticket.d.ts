@@ -1,7 +1,8 @@
 export type ticketStatus = "open" | "pending" | "close";
 export type ticketUrgency = "low" | "medium" | "high" | "critical";
 export interface ITicketSchema {
-    userId: string;
+    userId?: string;
+    email: string;
     title: string;
     content: string;
     status: ticketStatus;
