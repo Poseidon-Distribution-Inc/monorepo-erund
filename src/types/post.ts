@@ -77,6 +77,7 @@ export interface IPostSchema {
     mass: string;
     startDateTime: string;
     endDateTime: string;
+    duration?: string;
     status: TransactionStatus;
     runnerComplete: boolean;
     taskerVerified: boolean;
@@ -102,12 +103,12 @@ export interface IPostSchema {
     referenceNum?: string;
     isActive: boolean;
     progress?:
-    | 'in_transit'
-    | 'arrived'
-    | 'picked_up'
-    | 'delivery_in_progress'
-    | 'delivered'
-    | null;
+        | 'in_transit'
+        | 'arrived'
+        | 'picked_up'
+        | 'delivery_in_progress'
+        | 'delivered'
+        | null;
     runnerCurrentLocation?: {
         type: string;
         coordinates: [number, number]; // [longitude, latitude]
@@ -146,4 +147,4 @@ export interface IPoint {
     ts?: string; // ISO timestamp
 }
 
-export { };
+export {};
