@@ -1,3 +1,16 @@
+interface Vehicle {
+    vehicleId: number | null;
+    make?: string | null;
+    model?: string | null;
+    color?: string | null;
+    type?: 'sedan' | 'suv' | 'hatchback' | 'pickup' | 'van' | 'motorcycle' | 'truck' | 'bus' | 'convertible' | 'wagon' | 'coupe' | 'other' | null;
+    year?: number | null;
+    vehicleNum?: string | null;
+    vehicleUrl: Array<{
+        fileId: string;
+        publicLink: string;
+    }>;
+}
 export interface IProfileSchema {
     userId: string;
     firstName?: string;
@@ -12,18 +25,7 @@ export interface IProfileSchema {
     isActive: boolean;
     role: 'user' | 'admin' | 'runner';
     photoUrl?: string | null;
-    vehicle: {
-        make?: string | null;
-        model?: string | null;
-        color?: string | null;
-        type?: 'sedan' | 'suv' | 'hatchback' | 'pickup' | 'van' | 'motorcycle' | 'truck' | 'bus' | 'convertible' | 'wagon' | 'coupe' | 'other' | null;
-        year?: number | null;
-        vehicleNum?: string | null;
-        vehicleUrl: Array<{
-            fileId: string;
-            publicLink: string;
-        }>;
-    };
+    vehicle: Vehicle[] | null;
     address: {
         country?: string | null;
         state?: string | null;
