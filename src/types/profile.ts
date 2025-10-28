@@ -1,5 +1,5 @@
 export interface Vehicle {
-    _id: string;
+    _id?: string;
     make?: string | null;
     model?: string | null;
     color?: string | null;
