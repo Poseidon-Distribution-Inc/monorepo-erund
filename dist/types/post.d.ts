@@ -55,6 +55,7 @@ export interface IPostSchema {
     mass: string;
     startDateTime: string;
     endDateTime: string;
+    duration?: string;
     status: TransactionStatus;
     runnerComplete: boolean;
     taskerVerified: boolean;

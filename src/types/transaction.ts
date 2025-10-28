@@ -64,6 +64,9 @@ export interface ITransactionSchema {
     // Stripe payment details
     stripePaymentIntentId?: string;
     stripeTransferId?: string;
+    stripeInvoiceId?: string,
+    invoiceUrl?: string,
+    invoiceStatus?: string,
 
     isActive?: boolean;
     note?: string;
