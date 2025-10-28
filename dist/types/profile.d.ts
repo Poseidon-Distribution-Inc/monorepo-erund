@@ -1,5 +1,4 @@
 export interface Vehicle {
-    vehicleId: number | null;
     make?: string | null;
     model?: string | null;
     color?: string | null;
