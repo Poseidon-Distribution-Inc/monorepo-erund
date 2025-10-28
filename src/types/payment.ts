@@ -68,7 +68,7 @@ export interface ITransactions {
   stripeId: string;
   amount: number;
   currency: string;
-  status: "initiated" | "succeeded" | "failed" | "cancelled";
+  status: "initiated" | "succeeded" | "failed" | "cancelled" | "expired";
   meta?: Record<string, any>;
   feeAmount?: number;
   createdAt?: Date | string;

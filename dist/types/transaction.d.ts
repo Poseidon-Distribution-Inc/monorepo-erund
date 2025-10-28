@@ -1,4 +1,4 @@
-export type TransactionStatus = "awaiting_match" | "matched" | "processing" | "processing_payment" | "service_completed" | "service_completed_accepted" | "service_completed_paid" | "transaction_completed" | "failed" | "disputed" | "refunded" | "released" | "resolved_split" | "cancelled";
+export type TransactionStatus = "awaiting_match" | "matched" | "processing" | "processing_payment" | "service_completed" | "service_completed_accepted" | "service_completed_paid" | "transaction_completed" | "failed" | "disputed" | "refunded" | "released" | "resolved_split" | "cancelled" | "expired";
 export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
 type PostType = "bid" | "take";
 export interface ITransactionSchema {
@@ -41,6 +41,7 @@ export interface ITransactionSchema {
     stripePaymentIntentId?: string;
     stripeTransferId?: string;
     stripeInvoiceId?: string;
+    stripeInvoicePaymentIntentId?: string;
     invoiceUrl?: string;
     invoiceStatus?: string;
     isActive?: boolean;
