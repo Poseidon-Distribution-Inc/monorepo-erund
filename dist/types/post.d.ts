@@ -1,3 +1,4 @@
+import { Vehicle } from "./profile";
 type TransactionStatus = 'awaiting_match' | 'matched' | 'processing' | 'processing_payment' | 'service_completed' | 'service_completed_accepted' | 'service_completed_paid' | 'transaction_completed' | 'failed' | 'disputed' | 'refunded' | 'released' | 'resolved_split' | 'cancelled' | 'expired';
 type PostType = 'bid' | 'take';
 export interface IPostSchema {
@@ -93,6 +94,7 @@ export interface IPostSchema {
         removedAt: Date;
         reason: string;
     }[];
+    runnerVehicle?: Vehicle | "walking";
 }
 export interface IPost extends IPostSchema {
     id: string;

@@ -1,3 +1,5 @@
+import { Vehicle } from "./profile";
+
 interface GeoTag {
     latitude: number;
     longitude: number;
@@ -122,6 +124,7 @@ export interface IPostSchema {
         removedAt: Date;
         reason: string;
     }[];
+    runnerVehicle?: Vehicle | "walking";
 }
 export interface IPost extends IPostSchema {
     id: string;
