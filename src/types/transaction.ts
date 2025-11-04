@@ -63,6 +63,7 @@ export interface ITransactionSchema {
 
     // Stripe payment details
     stripePaymentIntentId?: string;
+    stripeTipPaymentIntentId?: string,
     stripeTransferId?: string;
     stripeInvoiceId?: string,
     stripeInvoicePaymentIntentId?: string,

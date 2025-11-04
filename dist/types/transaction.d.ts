@@ -39,6 +39,7 @@ export interface ITransactionSchema {
     releaseType?: 'manual' | 'auto';
     releaseAt?: Date;
     stripePaymentIntentId?: string;
+    stripeTipPaymentIntentId?: string;
     stripeTransferId?: string;
     stripeInvoiceId?: string;
     stripeInvoicePaymentIntentId?: string;
