@@ -70,6 +70,7 @@ export interface ITransactionSchema {
     invoiceUrl?: string,
     invoiceStatus?: string,
 
+    hasTipped?: boolean;
     isActive?: boolean;
     note?: string;
     
