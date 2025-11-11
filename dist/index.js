@@ -39,3 +39,4 @@ __exportStar(require("./types/notification"), exports);
 __exportStar(require("./types/ticket"), exports);
 __exportStar(require("./types/list"), exports);
 __exportStar(require("./types/userDelete"), exports);
+__exportStar(require("./types/discount"), exports);
