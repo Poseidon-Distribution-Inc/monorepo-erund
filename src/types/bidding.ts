@@ -9,7 +9,7 @@ export interface IBidder {
 }
 
 export interface IBiddingSchema {
-    postDetail: string;
+    postId: string;
     posterId: string;
     transactionId?:string;
     bidders: IBidder[];
