@@ -42,6 +42,7 @@ export interface ITransactionSchema {
     //PAYEE
     payeeAmount: number;
     tipAmount?: number;
+    discountAmount?: number;
 
     //TOTAL
     totalAmount: number;
@@ -71,6 +72,8 @@ export interface ITransactionSchema {
     invoiceStatus?: string,
 
     hasTipped?: boolean;
+    discountId?: string;
+    discountApplied?: boolean;
     isActive?: boolean;
     note?: string;
     

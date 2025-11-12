@@ -26,6 +26,7 @@ export interface ITransactionSchema {
     taxFeeAmount: number;
     payeeAmount: number;
     tipAmount?: number;
+    discountAmount?: number;
     totalAmount: number;
     matchedAt?: Date;
     processingAt?: Date;
@@ -46,6 +47,8 @@ export interface ITransactionSchema {
     invoiceUrl?: string;
     invoiceStatus?: string;
     hasTipped?: boolean;
+    discountId?: string;
+    discountApplied?: boolean;
     isActive?: boolean;
     note?: string;
 }
