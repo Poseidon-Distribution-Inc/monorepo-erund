@@ -2,7 +2,7 @@ export type biddingStatusEnum = "pending" | "accepted" | "rejected" | "cancelled
 export interface IBidder {
   bidderId: string;
   bidderName: string;
-  bidAmount: string;
+  bidAmount: number;
   bidderNote?: string;
   status: biddingStatusEnum;
   isActive: boolean;
