@@ -1,4 +1,5 @@
-type TransactionStatus = 'awaiting_match' | 'matched' | 'processing' | 'processing_payment' | 'service_completed' | 'service_completed_accepted' | 'service_completed_paid' | 'transaction_completed' | 'failed' | 'disputed' | 'refunded' | 'released' | 'resolved_split' | 'cancelled';
+import { Vehicle } from "./profile";
+type TransactionStatus = 'awaiting_match' | 'matched' | 'processing' | 'processing_payment' | 'service_completed' | 'service_completed_accepted' | 'service_completed_paid' | 'transaction_completed' | 'failed' | 'disputed' | 'refunded' | 'released' | 'resolved_split' | 'cancelled' | 'expired' | 'first_post';
 type PostType = 'bid' | 'take';
 export interface IPostSchema {
     transactionId?: string;
@@ -74,6 +75,8 @@ export interface IPostSchema {
     myDistance?: number;
     runnerFee?: number;
     stripePaymentIntentId?: string;
+    invoiceUrl?: string;
+    invoiceStatus?: string;
     runnerId?: string;
     runnerName?: string;
     runnerPhotoUrl?: string;
@@ -91,6 +94,9 @@ export interface IPostSchema {
         removedAt: Date;
         reason: string;
     }[];
+    discountCode?: string;
+    discountAmount?: number;
+    runnerVehicle?: Vehicle | "walking";
 }
 export interface IPost extends IPostSchema {
     id: string;

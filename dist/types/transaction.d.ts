@@ -1,4 +1,4 @@
-export type TransactionStatus = "awaiting_match" | "matched" | "processing" | "processing_payment" | "service_completed" | "service_completed_accepted" | "service_completed_paid" | "transaction_completed" | "failed" | "disputed" | "refunded" | "released" | "resolved_split" | "cancelled";
+export type TransactionStatus = "awaiting_match" | "matched" | "processing" | "processing_payment" | "service_completed" | "service_completed_accepted" | "service_completed_paid" | "transaction_completed" | "failed" | "disputed" | "refunded" | "released" | "resolved_split" | "cancelled" | "expired";
 export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
 type PostType = "bid" | "take";
 export interface ITransactionSchema {
@@ -26,6 +26,7 @@ export interface ITransactionSchema {
     taxFeeAmount: number;
     payeeAmount: number;
     tipAmount?: number;
+    discountAmount?: number;
     totalAmount: number;
     matchedAt?: Date;
     processingAt?: Date;
@@ -39,10 +40,15 @@ export interface ITransactionSchema {
     releaseType?: 'manual' | 'auto';
     releaseAt?: Date;
     stripePaymentIntentId?: string;
+    stripeTipPaymentIntentId?: string;
     stripeTransferId?: string;
     stripeInvoiceId?: string;
+    stripeInvoicePaymentIntentId?: string;
     invoiceUrl?: string;
     invoiceStatus?: string;
+    hasTipped?: boolean;
+    discountId?: string;
+    discountApplied?: boolean;
     isActive?: boolean;
     note?: string;
 }

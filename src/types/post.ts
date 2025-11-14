@@ -1,3 +1,5 @@
+import { Vehicle } from "./profile";
+
 interface GeoTag {
     latitude: number;
     longitude: number;
@@ -18,7 +20,9 @@ type TransactionStatus =
     | 'refunded'
     | 'released'
     | 'resolved_split'
-    | 'cancelled';
+    | 'cancelled'
+    | 'expired'
+    | 'first_post';
 type TransactionType = 'payment' | 'transfer' | 'refund' | 'fee' | 'payout';
 
 type PostType = 'bid' | 'take';
@@ -96,6 +100,8 @@ export interface IPostSchema {
     myDistance?: number;
     runnerFee?: number;
     stripePaymentIntentId?: string;
+    invoiceUrl?: string,
+    invoiceStatus?: string,
     runnerId?: string;
     runnerName?: string;
     runnerPhotoUrl?: string;
@@ -119,6 +125,9 @@ export interface IPostSchema {
         removedAt: Date;
         reason: string;
     }[];
+    discountCode?: string;
+    discountAmount?: number;
+    runnerVehicle?: Vehicle | "walking";
 }
 export interface IPost extends IPostSchema {
     id: string;

@@ -12,7 +12,8 @@ export type TransactionStatus =
     | 'refunded'
     | 'released'
     | 'resolved_split'
-    | 'cancelled';
+    | 'cancelled'
+    | 'expired';
 export type TransactionType =
     | 'payment'
     | 'transfer'
@@ -56,6 +57,7 @@ export interface ITransactionSchema {
     //PAYEE
     payeeAmount: number;
     tipAmount?: number;
+    discountAmount?: number;
 
     //TOTAL
     totalAmount: number;
@@ -75,11 +77,16 @@ export interface ITransactionSchema {
 
     // Stripe payment details
     stripePaymentIntentId?: string;
+    stripeTipPaymentIntentId?: string;
     stripeTransferId?: string;
     stripeInvoiceId?: string;
+    stripeInvoicePaymentIntentId?: string;
     invoiceUrl?: string;
     invoiceStatus?: string;
 
+    hasTipped?: boolean;
+    discountId?: string;
+    discountApplied?: boolean;
     isActive?: boolean;
     note?: string;
 }

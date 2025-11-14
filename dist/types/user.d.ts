@@ -7,7 +7,7 @@ interface IBaseUserSchema {
     createdAt: Date;
     updatedAt: Date;
     isVerified: boolean;
-    role: 'user' | 'admin' | 'superadmin' | 'platform' | 'advocates';
+    role: 'user' | 'runner' | 'admin' | 'superadmin' | 'platform' | 'advocates';
 }
 export interface ILocalUserSchema extends IBaseUserSchema {
     firstName: string;
