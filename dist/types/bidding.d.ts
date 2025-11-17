@@ -4,7 +4,6 @@ export interface IBidder {
     bidderName: string;
     bidAmount: number;
     bidderNote?: string;
-    bidderVehicle?: string;
     status: biddingStatusEnum;
     isActive: boolean;
 }
@@ -12,8 +11,11 @@ export interface IBiddingSchema {
     postId: string;
     posterId: string;
     transactionId?: string;
-    bidders: IBidder[];
-    selectedBidder?: string;
+    bidderId: string;
+    bidderName: string;
+    biddingAmount: string;
+    bidderNote?: string;
+    bidderVehicle?: string;
     status: biddingStatusEnum;
     isActive: boolean;
 }
