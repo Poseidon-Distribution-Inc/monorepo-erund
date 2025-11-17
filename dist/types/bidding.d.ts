@@ -8,6 +8,7 @@ export interface IBiddingSchema {
     bidderName: string;
     biddingAmount: string;
     bidderNote?: string;
+    bidderVehicle?: string;
     status: biddingStatusEnum;
     isActive: boolean;
 }
