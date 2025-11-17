@@ -125,6 +125,8 @@ export interface IPostSchema {
         removedAt: Date;
         reason: string;
     }[];
+    discountCode?: string;
+    discountAmount?: number;
     runnerVehicle?: Vehicle | "walking";
 }
 export interface IPost extends IPostSchema {

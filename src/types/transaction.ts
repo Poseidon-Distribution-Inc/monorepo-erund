@@ -1,31 +1,46 @@
-import { IDisputeSchema, IDispute } from './dispute';
-import { IHistorySchema, IHistory } from './history';
-
-export type TransactionStatus = "awaiting_match" | "matched" | "processing" | "processing_payment" | "service_completed" | "service_completed_accepted" |  "service_completed_paid" | "transaction_completed" | "failed" | "disputed" | "refunded" | "released" | "resolved_split" | "cancelled" | "expired";
-export type TransactionType = "payment" | "transfer" | "refund" | "fee" | "payout";
-type PostType = "bid" | "take";
+export type TransactionStatus =
+    | 'awaiting_match'
+    | 'matched'
+    | 'processing'
+    | 'processing_payment'
+    | 'service_completed'
+    | 'service_completed_accepted'
+    | 'service_completed_paid'
+    | 'transaction_completed'
+    | 'failed'
+    | 'disputed'
+    | 'refunded'
+    | 'released'
+    | 'resolved_split'
+    | 'cancelled'
+    | 'expired';
+export type TransactionType =
+    | 'payment'
+    | 'transfer'
+    | 'refund'
+    | 'fee'
+    | 'payout';
+type PostType = 'bid' | 'take';
 
 export interface ITransactionSchema {
     referenceNum?: string;
-    postId: string;            // Related post ID
-    postType: PostType;     // Type of post
-    bidIds?: string[];             // Related bid ID
-    posterId: string;          // ID of the poster, aka user/payer
-    bidderIds?: string[];         // ID of the bidder
-    runnerId?: string;         // Alternative name for runner ID, aka service provider/payee
-    paymentId?: string;        // Related payment ID
-    ratingIds?: string[];         // Related rating ID
-    chatRoomId?: string;       // Related chat room ID
-    historyId?: string;        // Related history ID
-    disputeId?: string;        // Related dispute ID
+    postId: string; // Related post ID
+    postType: PostType; // Type of post
+    bidIds?: string[]; // Related bid ID
+    posterId: string; // ID of the poster, aka user/payer
+    bidderIds?: string[]; // ID of the bidder
+    runnerId?: string; // Alternative name for runner ID, aka service provider/payee
+    paymentId?: string; // Related payment ID
+    ratingIds?: string[]; // Related rating ID
+    chatRoomId?: string; // Related chat room ID
+    historyId?: string; // Related history ID
+    disputeId?: string; // Related dispute ID
     status: string;
 
-
-   
     //BASE
-    baseFeeAmount: number; 
-    
-    // PLATFORM 
+    baseFeeAmount: number;
+
+    // PLATFORM
     platformFeePercentage: number;
     platforFixedFee: number;
     platformFeeAmount: number;
@@ -35,45 +50,45 @@ export interface ITransactionSchema {
     stripeFeePercentage: number;
     stripeFeeAmount: number;
 
-     //TAX
+    //TAX
     taxFeePercentage: number;
     taxFeeAmount: number;
 
     //PAYEE
     payeeAmount: number;
     tipAmount?: number;
+    discountAmount?: number;
 
     //TOTAL
     totalAmount: number;
-    
-    matchedAt?: Date;         // Time when the transaction was matched
+
+    matchedAt?: Date; // Time when the transaction was matched
     processingAt?: Date;
-    currency?: string;      // Time when the transaction was processing
+    currency?: string; // Time when the transaction was processing
     serviceCompletedAt?: Date; // Time when the service was completed
     transactionCompletedAt?: Date; // Time when the transaction was completed
-    failedAt?: Date;          // Time when the transaction failed
-    disputedAt?: Date;        // Time when the transaction was disputed
-    refundedAt?: Date;        // Time when the transaction was refunded
-    cancelledAt?: Date;       // Time when the transaction was cancelled
+    failedAt?: Date; // Time when the transaction failed
+    disputedAt?: Date; // Time when the transaction was disputed
+    refundedAt?: Date; // Time when the transaction was refunded
+    cancelledAt?: Date; // Time when the transaction was cancelled
 
-
-    releaseType?: 'manual' | 'auto';   //manual by user or auto by system (after 7 days)
-    releaseAt?: Date;             // Time when the transaction will be released
-
+    releaseType?: 'manual' | 'auto'; //manual by user or auto by system (after 7 days)
+    releaseAt?: Date; // Time when the transaction will be released
 
     // Stripe payment details
     stripePaymentIntentId?: string;
-    stripeTipPaymentIntentId?: string,
+    stripeTipPaymentIntentId?: string;
     stripeTransferId?: string;
-    stripeInvoiceId?: string,
-    stripeInvoicePaymentIntentId?: string,
-    invoiceUrl?: string,
-    invoiceStatus?: string,
+    stripeInvoiceId?: string;
+    stripeInvoicePaymentIntentId?: string;
+    invoiceUrl?: string;
+    invoiceStatus?: string;
 
     hasTipped?: boolean;
+    discountId?: string;
+    discountApplied?: boolean;
     isActive?: boolean;
     note?: string;
-    
 }
 
 export interface ITransaction extends ITransactionSchema {

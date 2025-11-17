@@ -18,6 +18,9 @@ export interface ILocalUserSchema extends IBaseUserSchema {
     countryCode?: string;
     photoUrl?: string;
     generalLocation: string;
+    payoutAccountName?: string;
+    payoutAccountNumber?: string;
+    payoutAccountCode?: string;
 }
 export interface ILocalUser extends ILocalUserSchema {}
 export interface IGoogleUserSchema extends IBaseUserSchema {
