@@ -1,3 +1,12 @@
+export type Day =
+    | 'Monday'
+    | 'Tuesday'
+    | 'Wednesday'
+    | 'Thursday'
+    | 'Friday'
+    | 'Saturday'
+    | 'Sunday';
+
 export interface Vehicle {
     _id?: string;
     make?: string | null;
@@ -10,6 +19,14 @@ export interface Vehicle {
         fileId: string;
         publicLink: string;
     }>;
+}
+
+export interface Availability {
+    day: Day[];
+    timeRange: Date;
+    status: 'available' | 'unavailable' | 'busy';
+    rate: number;
+    choreType: string;
 }
 
 export interface IProfileSchema {
@@ -34,6 +51,7 @@ export interface IProfileSchema {
         postalCode?: string | null,
     }
     expoPushToken?: string[] | null;
+    availability?: Availability[] | null;
 }
 export interface IProfile extends IProfileSchema {
     id: string;
