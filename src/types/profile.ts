@@ -23,7 +23,8 @@ export interface Vehicle {
 
 export interface Availability {
     day: Day[];
-    timeRange: Date;
+    startTime: Date;
+    endTime: Date;
     status: 'available' | 'unavailable' | 'busy';
     rate: number;
     choreType: string;
