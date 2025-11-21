@@ -49,6 +49,7 @@ export interface ITransactionSchema {
     hasTipped?: boolean;
     discountId?: string;
     discountApplied?: boolean;
+    biddingId?: string;
     isActive?: boolean;
     note?: string;
 }
