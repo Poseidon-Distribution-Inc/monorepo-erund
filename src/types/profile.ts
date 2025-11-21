@@ -27,7 +27,7 @@ export interface Availability {
     endTime: Date;
     status: 'available' | 'unavailable' | 'busy';
     rate: number;
-    choreType: string;
+    choreType: string[];
 }
 
 export interface IProfileSchema {
