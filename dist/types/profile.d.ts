@@ -43,6 +43,9 @@ export interface IProfileSchema {
     };
     expoPushToken?: string[] | null;
     availability?: Availability[] | null;
+    userWalkthrough: boolean;
+    firstPostWalkthrough: boolean;
+    runnerWalkthrough?: boolean;
 }
 export interface IProfile extends IProfileSchema {
     id: string;
