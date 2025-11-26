@@ -22,7 +22,8 @@ type TransactionStatus =
     | 'resolved_split'
     | 'cancelled'
     | 'expired'
-    | 'first_post';
+    | 'first_post'
+    | 'dummy_post';
 type TransactionType = 'payment' | 'transfer' | 'refund' | 'fee' | 'payout';
 
 type PostType = 'bid' | 'take';
