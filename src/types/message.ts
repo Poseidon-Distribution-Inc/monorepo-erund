@@ -14,6 +14,31 @@ export interface IMessage extends IMessageSchema {
   createdAt: Date;
   updatedAt: Date;
 }
+export interface IMessageThread {
+    _id: string;
+    lastMessage: string;
+    lastMessageData: {
+        _id: string;
+        transactionId: string;
+        message: string;
+        authorId: string;
+        recipientId: string;
+        isActive: boolean;
+        isSeen: boolean;
+        isEdited: boolean;
+        hiddenFor: string[];
+        createdAt: string;
+        updatedAt: string;
+        __v: number;
+    };
+    messageCount: number;
+    otherUser: {
+        userId: string;
+        firstName: string;
+        lastName: string;
+        photoUrl: string;
+    };
+}
 
 interface APIMessageErrorResponse {
   error: string;
