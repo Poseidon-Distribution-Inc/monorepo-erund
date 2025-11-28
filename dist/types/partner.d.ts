@@ -28,6 +28,7 @@ export interface IPartnerSchema {
     operatingHours?: IOperatingHours;
     status: 'online' | 'offline' | 'closed' | 'paused';
     isActive: boolean;
+    createdBy?: string;
 }
 export interface IPartner extends IPartnerSchema {
     id: string;
