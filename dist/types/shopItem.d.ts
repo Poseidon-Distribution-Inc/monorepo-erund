@@ -33,6 +33,3 @@ export interface APIGetShopItemResponse {
 export interface APIGetShopItemsResponse {
     items: IShopItemWithId[];
 }
-export interface APIErrorResponse {
-    error: string;
-}

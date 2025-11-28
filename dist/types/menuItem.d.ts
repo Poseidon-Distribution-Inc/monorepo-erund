@@ -31,6 +31,3 @@ export interface APIGetMenuItemResponse {
 export interface APIGetMenuItemsResponse {
     items: IMenuItemWithId[];
 }
-export interface APIErrorResponse {
-    error: string;
-}

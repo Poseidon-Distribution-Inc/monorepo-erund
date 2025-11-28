@@ -24,3 +24,6 @@ export * from "./types/ticket";
 export * from "./types/list";
 export * from "./types/userDelete";
 export * from "./types/discount";
+export * from "./types/partner";
+export * from "./types/menuItem";
+export * from "./types/shopItem";
