@@ -9,8 +9,10 @@ export interface IContactPerson {
 }
 
 export interface IOperatingHours {
-  open: string; // "08:00"
-  close: string; // "22:00"
+  [day: string]: {
+    open: string;
+    close: string;
+  };
 }
 
 export type KitchenCategory =

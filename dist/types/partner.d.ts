@@ -7,8 +7,10 @@ export interface IContactPerson {
     role?: string;
 }
 export interface IOperatingHours {
-    open: string;
-    close: string;
+    [day: string]: {
+        open: string;
+        close: string;
+    };
 }
 export type KitchenCategory = 'Fast Food' | 'Casual Dining' | 'Fine Dining' | 'Cafe / Coffee Shop' | 'Bakery' | 'Dessert / Ice Cream' | 'Pizza' | 'Burgers' | 'Sushi / Japanese' | 'Chinese / Asian' | 'Indian' | 'Mediterranean' | 'Vegan / Healthy' | 'Street Food' | 'Other';
 export type ShopCategory = 'Grocery' | 'Clothing' | 'Shoes / Accessories' | 'Electronics' | 'Books / Stationery' | 'Home & Living' | 'Beauty / Personal Care' | 'Toys / Baby' | 'Sports / Outdoors' | 'Pet Supplies' | 'Convenience Store' | 'Other';
