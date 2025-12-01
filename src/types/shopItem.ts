@@ -4,7 +4,7 @@ export interface IShopItemVariant {
   stock?: number;
 }
 
-export interface IShopItem {
+export interface IShopItemSchema {
   partnerId: string;
   name: string;
   description?: string;
@@ -17,7 +17,7 @@ export interface IShopItem {
   isActive: boolean;
 }
 
-export interface IShopItemWithId extends IShopItem {
+export interface IShopItem extends IShopItemSchema {
   id: string;
   createdAt: Date;
   updatedAt: Date;
@@ -34,9 +34,9 @@ export interface APIUpdateShopItemRequest {
 }
 
 export interface APIGetShopItemResponse {
-  item: IShopItemWithId;
+  item: IShopItem;
 }
 
 export interface APIGetShopItemsResponse {
-  items: IShopItemWithId[];
+  items: IShopItem[];
 }

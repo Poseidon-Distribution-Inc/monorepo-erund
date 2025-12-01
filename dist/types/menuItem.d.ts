@@ -2,7 +2,7 @@ export interface IMenuItemAddon {
     name: string;
     price?: number;
 }
-export interface IMenuItem {
+export interface IMenuItemSchema {
     partnerId: string;
     name: string;
     description?: string;
@@ -13,7 +13,7 @@ export interface IMenuItem {
     category?: string;
     isActive: boolean;
 }
-export interface IMenuItemWithId extends IMenuItem {
+export interface IMenuItem extends IMenuItemSchema {
     id: string;
     createdAt: Date;
     updatedAt: Date;
@@ -26,8 +26,8 @@ export interface APIUpdateMenuItemRequest {
     updates: Partial<IMenuItem>;
 }
 export interface APIGetMenuItemResponse {
-    item: IMenuItemWithId;
+    item: IMenuItem;
 }
 export interface APIGetMenuItemsResponse {
-    items: IMenuItemWithId[];
+    items: IMenuItem[];
 }
