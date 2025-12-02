@@ -1,4 +1,5 @@
 import { Vehicle } from "./profile";
+import { IBidder } from "./bidding";
 type TransactionStatus = 'awaiting_match' | 'matched' | 'processing' | 'processing_payment' | 'service_completed' | 'service_completed_accepted' | 'service_completed_paid' | 'transaction_completed' | 'failed' | 'disputed' | 'refunded' | 'released' | 'resolved_split' | 'cancelled' | 'expired' | 'first_post' | 'dummy_post';
 type PostType = 'bid' | 'take';
 export interface IPostSchema {
@@ -97,6 +98,8 @@ export interface IPostSchema {
     discountCode?: string;
     discountAmount?: number;
     runnerVehicle?: Vehicle | "walking";
+    bids?: IBidder[];
+    views?: number;
 }
 export interface IPost extends IPostSchema {
     id: string;
