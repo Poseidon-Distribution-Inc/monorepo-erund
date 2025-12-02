@@ -40,3 +40,6 @@ __exportStar(require("./types/ticket"), exports);
 __exportStar(require("./types/list"), exports);
 __exportStar(require("./types/userDelete"), exports);
 __exportStar(require("./types/discount"), exports);
+__exportStar(require("./types/partner"), exports);
+__exportStar(require("./types/menuItem"), exports);
+__exportStar(require("./types/shopItem"), exports);
