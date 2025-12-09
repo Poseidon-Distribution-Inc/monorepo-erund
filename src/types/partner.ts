@@ -59,6 +59,8 @@ export interface IPartnerSchema {
   operatingHours?: IOperatingHours;
   status: 'online' | 'offline' | 'closed' | 'paused';
   isActive: boolean;
+  deactivatedAt?: Date;
+  deactivatedBy?: string;
   createdBy?: string;
 }
 
