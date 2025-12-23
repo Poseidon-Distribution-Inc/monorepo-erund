@@ -9,7 +9,8 @@ export type UserActivityType =
     'bid' |
     'complete_errand' |
     'dispute_errand' |
-    'view_post';
+    'view_post' |
+    'send_message';
 
 export interface IUserActivitySchema {
     userId: string;
