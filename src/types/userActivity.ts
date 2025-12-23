@@ -11,17 +11,11 @@ export type UserActivityType =
 'send_message' |
 'dispute_errand';
 
-export interface IUserActivityLogSchema {
-    type: UserActivityType;
-    timestamp: Date;
-    details?: string;
-}
-
 export interface IUserActivitySchema {
     userId: string;
     role: 'user' | 'runner';
-    activityLog: IUserActivityLogSchema[];
-    lastActiveAt: Date;
+    activity: UserActivityType;
+    details?: string;
 }
 
 export interface IUserActivity extends IUserActivitySchema {
