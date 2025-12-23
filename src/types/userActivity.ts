@@ -1,15 +1,15 @@
 export type UserActivityType = 
-'open_app' |
-'login' |
-'logout' |
-'update_profile' |
-'create_post' |
-'browse_home' |
-'book_runner' |
-'bid' |
-'complete_errand' |
-'send_message' |
-'dispute_errand';
+    'open_app' |
+    'login' |
+    'logout' |
+    'update_profile' |
+    'create_post' |
+    'browse_home' |
+    'book_runner' |
+    'bid' |
+    'complete_errand' |
+    'send_message' |
+    'dispute_errand';
 
 export interface IUserActivitySchema {
     userId: string;
