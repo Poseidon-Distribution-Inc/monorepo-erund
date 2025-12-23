@@ -43,3 +43,4 @@ __exportStar(require("./types/discount"), exports);
 __exportStar(require("./types/partner"), exports);
 __exportStar(require("./types/menuItem"), exports);
 __exportStar(require("./types/shopItem"), exports);
+__exportStar(require("./types/userActivity"), exports);
