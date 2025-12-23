@@ -8,8 +8,8 @@ export type UserActivityType =
     'book_runner' |
     'bid' |
     'complete_errand' |
-    'send_message' |
-    'dispute_errand';
+    'dispute_errand' |
+    'view_post';
 
 export interface IUserActivitySchema {
     userId: string;

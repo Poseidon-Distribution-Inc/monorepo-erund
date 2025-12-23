@@ -1,4 +1,4 @@
-export type UserActivityType = 'open_app' | 'login' | 'logout' | 'update_profile' | 'create_post' | 'browse_home' | 'book_runner' | 'bid' | 'complete_errand' | 'send_message' | 'dispute_errand';
+export type UserActivityType = 'open_app' | 'login' | 'logout' | 'update_profile' | 'create_post' | 'browse_home' | 'book_runner' | 'bid' | 'complete_errand' | 'dispute_errand' | 'view_post';
 export interface IUserActivitySchema {
     userId: string;
     role: 'user' | 'runner';
