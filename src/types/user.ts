@@ -17,22 +17,7 @@ export interface ILocalUserSchema extends IBaseUserSchema {
     postalCode?: string;
     countryCode?: string;
     photoUrl?: string;
-    generalLocation?: {
-        street?: string;
-        streetNumber?: string;
-        city?: string;
-        district?: string;
-        region?: string;
-        subregion?: string;
-        country?: string;
-        isoCountryCode?: string;
-        postalCode?: string;
-        formattedAddress?: string;
-        name?: string;
-        timezone?: string | null;
-        lat?: number;
-        long?: number;
-    };
+    generalLocation?: string;
     payoutAccountName?: string;
     payoutAccountNumber?: string;
     payoutAccountCode?: string;
