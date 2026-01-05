@@ -1,4 +1,5 @@
 import { Vehicle } from "./profile";
+import { IBidder } from "./bidding";
 
 interface GeoTag {
     latitude: number;
@@ -22,7 +23,8 @@ type TransactionStatus =
     | 'resolved_split'
     | 'cancelled'
     | 'expired'
-    | 'first_post';
+    | 'first_post'
+    | 'dummy_post';
 type TransactionType = 'payment' | 'transfer' | 'refund' | 'fee' | 'payout';
 
 type PostType = 'bid' | 'take';
@@ -128,6 +130,8 @@ export interface IPostSchema {
     discountCode?: string;
     discountAmount?: number;
     runnerVehicle?: Vehicle | "walking";
+    bids?: IBidder[];
+    views?: number;
 }
 export interface IPost extends IPostSchema {
     id: string;

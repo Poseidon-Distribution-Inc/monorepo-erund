@@ -1,9 +1,11 @@
+import { Vehicle } from "./profile";
 export type biddingStatusEnum = "pending" | "accepted" | "rejected" | "cancelled";
 export interface IBidder {
     bidderId: string;
     bidderName: string;
-    biddingAmount: string;
+    bidAmount: number;
     bidderNote?: string;
+    bidderVehicle: Vehicle | "walking";
     status: biddingStatusEnum;
     isActive: boolean;
 }

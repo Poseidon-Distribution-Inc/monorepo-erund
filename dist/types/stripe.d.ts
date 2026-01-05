@@ -1,6 +1,8 @@
 export interface IBankAccountSchema {
     id: string;
     object: "bank_account";
+    bankName: string;
+    last4: string;
     accountHolderName: string;
     accountNumber: string;
     routingNumber: string;
@@ -9,12 +11,15 @@ export interface IBankAccountSchema {
     accountHolderType: "individual" | "company";
     country: string;
     currency: string;
+    status: "new" | "validated" | "verified" | "errored" | "deleted";
     isDefault: boolean;
 }
 export interface IPayoutCardSchema {
     id: string;
     object: "card";
-    cardNumber: string;
+    cardHolderName: string;
+    brand: string;
+    last4: string;
     expMonth: number;
     expYear: number;
     country: string;
@@ -24,8 +29,9 @@ export interface IPayoutCardSchema {
 export interface IPaymentCardSchema {
     id: string;
     object: "card";
-    cardholderName: string;
-    cardNumber: string;
+    cardHolderName: string;
+    brand: string;
+    last4: string;
     expMonth: number;
     expYear: number;
     cvc: string;
