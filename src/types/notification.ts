@@ -14,7 +14,8 @@ type NotifTitle =
     | "rate_updated"
     | "rate_cancelled"
     | "rate_accepted"
-    | "new_booking";
+    | "new_booking"
+    | "booking_declined";
 export interface INotificationSchema {
     _id?: string;
     userId: string;
