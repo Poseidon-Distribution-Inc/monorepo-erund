@@ -42,8 +42,11 @@ export interface ITransactionSchema {
     stripePaymentIntentId?: string;
     stripeTipPaymentIntentId?: string;
     stripeTransferId?: string;
+    stripePayoutId?: string;
     stripeInvoiceId?: string;
     stripeInvoicePaymentIntentId?: string;
+    payoutMethod?: string;
+    payoutInitiatedAt?: Date;
     invoiceUrl?: string;
     invoiceStatus?: string;
     hasTipped?: boolean;
