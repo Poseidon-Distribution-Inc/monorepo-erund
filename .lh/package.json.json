@@ -1,0 +1,18 @@
+{
+    "sourceFile": "package.json",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 0,
+            "patches": [
+                {
+                    "date": 1767837187972,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                }
+            ],
+            "date": 1767837187972,
+            "name": "Commit-0",
+            "content": "{\r\n  \"name\": \"monorepo-erund\",\r\n  \"version\": \"1.0.1\",\r\n  \"main\": \"./dist/index.js\",\r\n  \"scripts\": {\r\n    \"test\": \"echo \\\"Error: no test specified\\\" && exit 1\",\r\n    \"build\": \"tsc\",\r\n    \"watch\": \"npx tsc --project tsconfig.json --watch\",\r\n    \"prepare\": \"npm run build\",\r\n    \"build+\": \"npx tsc && git add -A && git commit -m \\\"build: update dist\\\" && git push\"\r\n  },\r\n  \"keywords\": [],\r\n  \"author\": \"\",\r\n  \"license\": \"ISC\",\r\n  \"description\": \"\",\r\n  \"devDependencies\": {\r\n    \"@types/node\": \"^22.13.14\",\r\n    \"ts-node\": \"^10.9.2\",\r\n    \"typescript\": \"^5.8.2\"\r\n  },\r\n  \"repository\": {\r\n    \"type\": \"git\",\r\n    \"url\": \"git+https://github.com/Poseidon-Distribution-Inc/monorepo-erund.git\"\r\n  }\r\n}\r\n"
+        }
+    ]
+}

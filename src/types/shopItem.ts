@@ -1,42 +1,75 @@
 export interface IShopItemVariant {
-  name: string; // e.g., "Red / L"
-  price?: number;
-  stock?: number;
+    name: string;
+    price?: number;
+    stock?: number;
+}
+
+export interface IShopAddOns {
+    name: string;
+    price: number;
+    imageUrl?: string;
+    isAvailable: Boolean;
 }
 
 export interface IShopItemSchema {
-  partnerId: string;
-  name: string;
-  description?: string;
-  price: number;
-  imageUrl?: string;
-  variants?: IShopItemVariant[];
-  stock?: number;
-  availability: boolean;
-  category?: string;
-  isActive: boolean;
+    partnerId: string;
+    type: string;
+    name: string;
+    description?: string;
+    price: number;
+    imageUrl?: string;
+    variants?: IShopItemVariant[];
+    stock?: number;
+    addOns: IShopAddOns[];
+    availability: boolean;
+    category?: string;
+    isActive: boolean;
 }
-
 export interface IShopItem extends IShopItemSchema {
-  id: string;
-  createdAt: Date;
-  updatedAt: Date;
+    id: string;
+    createdAt: Date;
+    updatedAt: Date;
 }
-
-// API interfaces
 export interface APICreateShopItemRequest {
-  item: IShopItem;
+    item: IShopItem;
 }
-
 export interface APIUpdateShopItemRequest {
-  itemId: string;
-  updates: Partial<IShopItem>;
+    itemId: string;
+    updates: Partial<IShopItem>;
 }
-
 export interface APIGetShopItemResponse {
-  item: IShopItem;
+    item: IShopItem;
+}
+export interface APIGetShopItemsResponse {
+    items: IShopItem[];
 }
 
-export interface APIGetShopItemsResponse {
-  items: IShopItem[];
+export interface IShopData {
+    id: ObjectId,
+    owner: string,
+    name: string,
+    rate: number,
+    timeOperate: string,
+    category: string,
+    coverPhoto: string,
+    countOfRater: number
+}
+
+export interface IItem {
+    id: ObjectId,
+    name: string,
+    price: number,
+    itemCategory: string,
+    stock: number,
+    itemPhoto: string,
+    description: string,
+    rate: number,
+    countOfRater: number,
+    variant?: IShopItemVariant[]
+}
+
+export interface IShop extends IShopData {
+    address: string,
+    categories: string[],
+    item: IItem[] 
 }
