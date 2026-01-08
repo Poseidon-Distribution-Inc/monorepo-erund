@@ -45,7 +45,7 @@ export interface APIGetShopItemsResponse {
 }
 
 export interface IShopData {
-    id: ObjectId,
+    id: string,
     owner: string,
     name: string,
     rate: number,
@@ -56,7 +56,7 @@ export interface IShopData {
 }
 
 export interface IItem {
-    id: ObjectId,
+    id: string,
     name: string,
     price: number,
     itemCategory: string,

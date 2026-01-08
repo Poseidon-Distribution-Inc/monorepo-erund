@@ -3,7 +3,7 @@
     "activeCommit": 0,
     "commits": [
         {
-            "activePatchIndex": 1,
+            "activePatchIndex": 3,
             "patches": [
                 {
                     "date": 1767837231732,
@@ -12,6 +12,14 @@
                 {
                     "date": 1767837257306,
                     "content": "Index: \n===================================================================\n--- \n+++ \n@@ -67,9 +67,9 @@\n     countOfRater: number,\r\n     variant?: IShopItemVariant[]\r\n }\r\n \r\n-export interface IShop extends ShopData {\r\n+export interface IShop extends IShopData {\r\n     address: string,\r\n     categories: string[],\r\n     item: IItem[] \r\n }\n\\ No newline at end of file\n"
+                },
+                {
+                    "date": 1767837497875,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,9 +44,9 @@\n     items: IShopItem[];\r\n }\r\n \r\n export interface IShopData {\r\n-    id: ObjectId,\r\n+    id: string  ,\r\n     owner: string,\r\n     name: string,\r\n     rate: number,\r\n     timeOperate: string,\r\n"
+                },
+                {
+                    "date": 1767837502926,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -0,0 +1,75 @@\n+export interface IShopItemVariant {\r\n+    name: string;\r\n+    price?: number;\r\n+    stock?: number;\r\n+}\r\n+\r\n+export interface IShopAddOns {\r\n+    name: string;\r\n+    price: number;\r\n+    imageUrl?: string;\r\n+    isAvailable: Boolean;\r\n+}\r\n+\r\n+export interface IShopItemSchema {\r\n+    partnerId: string;\r\n+    type: string;\r\n+    name: string;\r\n+    description?: string;\r\n+    price: number;\r\n+    imageUrl?: string;\r\n+    variants?: IShopItemVariant[];\r\n+    stock?: number;\r\n+    addOns: IShopAddOns[];\r\n+    availability: boolean;\r\n+    category?: string;\r\n+    isActive: boolean;\r\n+}\r\n+export interface IShopItem extends IShopItemSchema {\r\n+    id: string;\r\n+    createdAt: Date;\r\n+    updatedAt: Date;\r\n+}\r\n+export interface APICreateShopItemRequest {\r\n+    item: IShopItem;\r\n+}\r\n+export interface APIUpdateShopItemRequest {\r\n+    itemId: string;\r\n+    updates: Partial<IShopItem>;\r\n+}\r\n+export interface APIGetShopItemResponse {\r\n+    item: IShopItem;\r\n+}\r\n+export interface APIGetShopItemsResponse {\r\n+    items: IShopItem[];\r\n+}\r\n+\r\n+export interface IShopData {\r\n+    id: string,\r\n+    owner: string,\r\n+    name: string,\r\n+    rate: number,\r\n+    timeOperate: string,\r\n+    category: string,\r\n+    coverPhoto: string,\r\n+    countOfRater: number\r\n+}\r\n+\r\n+export interface IItem {\r\n+    id: string,\r\n+    name: string,\r\n+    price: number,\r\n+    itemCategory: string,\r\n+    stock: number,\r\n+    itemPhoto: string,\r\n+    description: string,\r\n+    rate: number,\r\n+    countOfRater: number,\r\n+    variant?: IShopItemVariant[]\r\n+}\r\n+\r\n+export interface IShop extends IShopData {\r\n+    address: string,\r\n+    categories: string[],\r\n+    item: IItem[] \r\n+}\n\\ No newline at end of file\n"
                 }
             ],
             "date": 1767837231732,
