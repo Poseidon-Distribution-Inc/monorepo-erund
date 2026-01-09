@@ -75,6 +75,7 @@ export interface IPostSchema {
     };
     myDistance?: number;
     runnerFee?: number;
+    totalAmount?: number;
     stripePaymentIntentId?: string;
     invoiceUrl?: string;
     invoiceStatus?: string;
