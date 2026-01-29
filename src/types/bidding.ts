@@ -1,6 +1,6 @@
 import { Vehicle } from "./profile";
 
-export type biddingStatusEnum = "pending" | "accepted" | "rejected" | "cancelled";
+export type biddingStatusEnum = "pending" | "pending_accepted" | "accepted" | "rejected" | "cancelled";
 export interface IBidder {
   bidderId: string;
   bidderName: string;
@@ -17,6 +17,7 @@ export interface IBiddingSchema {
     transactionId?:string;
     bidders: IBidder[];
     selectedBidder?: string;
+    selectedAmount?: string;
     status: biddingStatusEnum;
     isActive: boolean;
 }
