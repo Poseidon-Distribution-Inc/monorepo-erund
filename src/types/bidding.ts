@@ -17,7 +17,7 @@ export interface IBiddingSchema {
     transactionId?:string;
     bidders: IBidder[];
     selectedBidder?: string;
-    selectedAmount?: string;
+    selectedAmount?: number;
     status: biddingStatusEnum;
     isActive: boolean;
 }
